@@ -10,6 +10,8 @@ import StoryPage from "./pages/Story";
 import AdminPage from "./pages/AdminPage";
 import QuizResultsPage from "./pages/QuizResultsPage";
 import NotFound from "./pages/NotFound";
+import Sample from "./pages/Sample";
+import UnityPage from "./pages/UnityPage";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +27,11 @@ const App = () => (
           <Route path="/homepage" element={
             <ProtectedRoute>
               <Homepage />
+            </ProtectedRoute>
+          } />
+          <Route path="/sample" element={
+            <ProtectedRoute>
+              <Sample />
             </ProtectedRoute>
           } />
           <Route path="/roadmap" element={
@@ -43,6 +50,7 @@ const App = () => (
             </ProtectedRoute>
           } />
           <Route path="/story/:storyId" element={<StoryPage />} />
+          <Route path="/unity" element={<UnityPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

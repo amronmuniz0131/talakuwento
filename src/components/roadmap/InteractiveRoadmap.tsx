@@ -27,12 +27,12 @@ export const InteractiveRoadmap: React.FC<InteractiveRoadmapProps> = ({ onStoryS
   return (
     <div className="roadmap-container">
       {/* Background Image */}
-      <img 
-        src={bgImage} 
-        alt="Talakuwento Roadmap" 
+      <img
+        src={bgImage}
+        alt="Talakuwento Roadmap"
         className="roadmap-image"
       />
-      
+
       {/* Hotspots Container */}
       <div className="roadmap-image pointer-events-none">
         {/* We need pointer-events-auto on the actual hotspots inside this container */}
@@ -48,7 +48,10 @@ export const InteractiveRoadmap: React.FC<InteractiveRoadmapProps> = ({ onStoryS
               onClick={() => onStorySelect(story)}
             >
               {/* Completely invisible clickable area overlaying the sign */}
-              <div className="w-full h-full" />
+              <div className="w-full h-full hover:scale-[1.3] transition-transform duration-500 bg-black" >
+
+                Test Image
+              </div>
             </div>
           );
         })}
