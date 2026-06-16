@@ -1,0 +1,146 @@
+import React, { useRef } from 'react'
+import { useGLTF } from '@react-three/drei'
+
+export function LawaNgBulusanModel(props: any) {
+  const { nodes, materials } = useGLTF('/lawa-ng-bulusan.glb') as any
+  return (
+    <group {...props} dispose={null}>
+      <group scale={0.01}>
+        <group scale={100}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_3_m0mat002_0'].geometry}
+            material={materials['m0mat.002']}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_3_sub140_name_m190mat001_0'].geometry}
+            material={materials['m190mat.001']}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_3_sub164_name_m164mat001_0'].geometry}
+            material={materials['m164mat.001']}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_3_sub165_name_m165mat001_0'].geometry}
+            material={materials['m165mat.001']}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_3_sub166_name_m166mat001_0'].geometry}
+            material={materials['m166mat.001']}
+          />
+        </group>
+        <group scale={100}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_m0mat003_0'].geometry}
+            material={materials['m0mat.003']}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_sub1_name_m1mat002_0'].geometry}
+            material={materials['m1mat.002']}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_sub2_name_m2mat002_0'].geometry}
+            material={materials['m2mat.002']}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_sub3_name_m3mat002_0'].geometry}
+            material={materials['m3mat.002']}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_sub4_name_m4mat002_0'].geometry}
+            material={materials['m4mat.002']}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_sub5_name_m5mat002_0'].geometry}
+            material={materials['m5mat.002']}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_sub7_name_m9mat002_0'].geometry}
+            material={materials['m9mat.002']}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_sub33_name_m72mat002_0'].geometry}
+            material={materials['m72mat.002']}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_sub82_name_m82mat002_0'].geometry}
+            material={materials['m82mat.002']}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_sub83_name_m82mat002_0'].geometry}
+            material={materials['m82mat.002']}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_sub97_name_m97mat002_0'].geometry}
+            material={materials['m97mat.002']}
+          />
+        </group>
+        <group scale={100}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_2_m21mat001_0'].geometry}
+            material={materials['m21mat.001']}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_2_sub31_name_m21mat001_0'].geometry}
+            material={materials['m21mat.001']}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_2_sub32_name_m22mat001_0'].geometry}
+            material={materials['m22mat.001']}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_2_sub214_name_Material002_0'].geometry}
+            material={materials['Material.002']}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['Combined_Mesh_(root_scene)_2_sub214_name_Material002_0_1'].geometry}
+            material={materials['Material.002']}
+          />
+        </group>
+      </group>
+    </group>
+  )
+}
+
+useGLTF.preload('/lawa-ng-bulusan.glb')

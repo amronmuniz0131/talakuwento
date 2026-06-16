@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    /* Sky & Background */
+    --background: 210 60% 95%;
+    --foreground: 240 30% 20%;
+
+    /* Cards & Panels */
+    --card: 0 0% 100%;
+    --card-foreground: 240 30% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 30% 20%;
+
+    /* Primary - Warm Golden */
+    --primary: 38 85% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Soft Sky Blue */
+    --secondary: 200 70% 85%;
+    --secondary-foreground: 210 50% 25%;
+
+    /* Muted - Soft Lavender */
+    --muted: 250 30% 92%;
+    --muted-foreground: 250 20% 50%;
+
+    /* Accent - Peachy Pink */
+    --accent: 15 80% 80%;
+    --accent-foreground: 15 60% 25%;
+
+    /* Story Colors */
+    --creation: 145 50% 55%;
+    --creation-glow: 145 60% 70%;
+    --noah: 200 60% 60%;
+    --noah-glow: 200 70% 75%;
+    --moses: 35 70% 55%;
+    --moses-glow: 35 80% 70%;
+    --david: 280 45% 60%;
+    --david-glow: 280 55% 75%;
+    --jesus: 45 90% 60%;
+    --jesus-glow: 45 95% 75%;
+
+    /* UI */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 38 85% 55%;
+
+    --radius: 1rem;
+
+    /* Gradients */
+    --gradient-sky: linear-gradient(180deg, 
+      hsl(200 70% 85%) 0%, 
+      hsl(30 70% 90%) 50%, 
+      hsl(15 80% 88%) 100%);
+    
+    --gradient-panel: linear-gradient(135deg, 
+      hsl(0 0% 100% / 0.95) 0%, 
+      hsl(250 30% 98% / 0.9) 100%);
+
+    --gradient-button: linear-gradient(135deg, 
+      hsl(38 85% 55%) 0%, 
+      hsl(30 90% 60%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 8px 32px -8px hsl(240 30% 20% / 0.15);
+    --shadow-glow: 0 0 40px 10px hsl(38 85% 55% / 0.3);
+    --shadow-panel: 0 20px 60px -20px hsl(240 30% 20% / 0.25);
+
+    /* Fonts */
+    --font-display: 'Fredoka', sans-serif;
+    --font-body: 'Quicksand', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 30% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 240 25% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 240 25% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 38 85% 55%;
+    --primary-foreground: 240 30% 10%;
+
+    --secondary: 220 40% 25%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 240 20% 18%;
+    --muted-foreground: 240 15% 65%;
+
+    --accent: 15 60% 40%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 20% 20%;
+    --input: 240 20% 20%;
+    --ring: 38 85% 55%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .panel-glass {
+    background: var(--gradient-panel);
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-panel);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .btn-primary {
+    background: var(--gradient-button);
+    color: hsl(var(--primary-foreground));
+    font-family: var(--font-display);
+    font-weight: 600;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .story-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+    font-family: var(--font-display);
+  }
+
+  .story-badge-creation {
+    background: hsl(var(--creation) / 0.2);
+    color: hsl(var(--creation));
+  }
+
+  .story-badge-noah {
+    background: hsl(var(--noah) / 0.2);
+    color: hsl(var(--noah));
+  }
+
+  .story-badge-moses {
+    background: hsl(var(--moses) / 0.2);
+    color: hsl(var(--moses));
+  }
+
+  .story-badge-david {
+    background: hsl(var(--david) / 0.2);
+    color: hsl(var(--david));
+  }
+
+  .story-badge-jesus {
+    background: hsl(var(--jesus) / 0.2);
+    color: hsl(var(--jesus));
+  }
+}
+
+@layer utilities {
+  .text-shadow-soft {
+    text-shadow: 0 2px 10px hsl(240 30% 20% / 0.1);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: -3s;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-sparkle {
+    animation: sparkle 1.5s ease-in-out infinite;
+  }
+
+  .animate-float-character {
+    animation: float-character 4s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.scene-container > div {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  inset: 0 !important;
+}
+
+.scene-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+@keyframes float-firefly {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+  100% { transform: translate(15px, -25px) scale(1.5); opacity: 1; }
+}
+
+@keyframes float-character {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.roadmap-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+.roadmap-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Default object-fit is fill, which stretches the image to perfectly fill the screen
+     without black bars and without cropping any content. */
+}
