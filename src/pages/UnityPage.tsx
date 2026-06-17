@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from 'react';
 import { Unity, useUnityContext } from "react-unity-webgl";
 
 export default function UnityPage() {
@@ -8,6 +8,24 @@ export default function UnityPage() {
     frameworkUrl: "/assets/build.framework.js.br",
     codeUrl: "/assets/build.wasm.br",
   });
+
+  const [dimensions, setDimensions] = useState({
+    width: typeof window !== 'undefined' ? window.innerWidth : 700,
+    height: typeof window !== 'undefined' ? window.innerHeight : 500
+  });
+
+
+  useEffect(() => {
+    function handleResize() {
+      setDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    }
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white w-full">
@@ -25,7 +43,7 @@ export default function UnityPage() {
         </div>
       )}
 
-      <div className="border-4 border-gray-700 rounded-lg overflow-hidden shadow-2xl relative" style={{ width: 800, height: 600 }}>
+      <div className="border-4 border-gray-700 rounded-lg overflow-hidden shadow-2xl relative" style={{ width: dimensions.width * 0.9, height: dimensions.height * 0.9 }}>
         <Unity
           unityProvider={unityProvider}
           style={{ width: "100%", height: "100%" }}
