@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Use environment variable for API URL or default to localhost
-const API_URL = 'http://localhost:5000/api/auth';
+const API_URL = '/api/auth';
 
 export const login = async (email: string, password: string) => {
   try {
