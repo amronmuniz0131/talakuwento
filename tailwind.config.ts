@@ -105,20 +105,42 @@ export default {
           "50%": { opacity: "1", transform: "scale(1.05)" },
         },
         "move-left": {
-          "0%": { transform: "translateX(0px)" },
+          "0%": { transform: "translateX(450px)" },
           "100%": { transform: "translateX(-450px)" },
         },
         "move-right": {
-          "0%": { transform: "translateX(0px)" },
+          "0%": { transform: "translateX(-450px)" },
           "100%": { transform: "translateX(450px)" },
         },
         "move-up": {
           "0%": { transform: "translateY(0px)" },
-          "100%": { transform: "translateY(-1050px)" },
+          "100%": { transform: "translateY(-1080px)" },
+        },
+        "move-down": {
+          "0%": { transform: "translateY(-1080px)" },
+          "100%": { transform: "translateY(0px)" },
         },
         "shake": {
           "0%, 20%, 40%, 60%, 80%, 100%": { transform: "translateX(10px)" },
           "10%, 30%, 50%, 70%, 90%": { transform: "translateX(0px)" },
+        },
+        "fade": {
+          "0%": { "opacity": "100%" },
+          "100%": { "opacity": "0%" },
+        },
+        "show": {
+          "0%": {
+            "opacity": "0%"
+          },
+          "100%": {
+            "opacity": "100%"
+          }
+        },
+        "move-bird": {
+          "0%": { transform: "translateX(0) rotateY(180deg)" },
+          "50%": { transform: "translateX(500px) rotateY(180deg)" },
+          "75%": { transform: "translateX(250px) rotateY(0deg)" },
+          "100%": { transform: "translateX(0) rotateY(0deg)" }
         }
       },
       animation: {
@@ -129,7 +151,11 @@ export default {
         "move-left": "move-left 2s ease-in-out",
         "move-right": "move-right 2s ease-in-out",
         "move-up": "move-up 2s ease-in-out",
-        "shake": "shake 4s ease-in"
+        "shake": "shake 4s ease-in",
+        "move-down": "move-down 2s ease-in-out",
+        "fade": "fade 1s ease-in-out",
+        "show": "show 1s ease-in-out",
+        "move-bird": "move-bird 10s ease-in-out infinite"
       },
     },
   },
