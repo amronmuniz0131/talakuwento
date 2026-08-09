@@ -114,10 +114,10 @@ export default {
         },
         "move-up": {
           "0%": { transform: "translateY(0px)" },
-          "100%": { transform: "translateY(-1080px)" },
+          "100%": { transform: "translateY(-180px)" },
         },
         "move-down": {
-          "0%": { transform: "translateY(-1080px)" },
+          "0%": { transform: "translateY(-180px)" },
           "100%": { transform: "translateY(0px)" },
         },
         "shake": {
@@ -141,6 +141,37 @@ export default {
           "50%": { transform: "translateX(500px) rotateY(180deg)" },
           "75%": { transform: "translateX(250px) rotateY(0deg)" },
           "100%": { transform: "translateX(0) rotateY(0deg)" }
+        },
+        "move-cloud": {
+          "0%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(80vw)" },
+          "100%": { transform: "translateX(0)" }
+        },
+        "move-sun": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-80vw)" }
+        },
+        "move-moon": {
+          "0%": { transform: "translateX(80vw)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        "out-moon": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(80vw)" },
+        },
+        "out-sun": {
+          "0%": { transform: "translateX(-80vw)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        "morning-sun": {
+          "0%": { backgroundColor: "yellow"},
+          "50%": { backgroundColor: "orange" },
+          "100%": { backgroundColor: "black" },
+        },
+        "evening-moon": {
+          "0%": { backgroundColor: "black"},
+          "50%": { backgroundColor: "orange" },
+          "100%": { backgroundColor: "yellow" },
         }
       },
       animation: {
@@ -150,12 +181,19 @@ export default {
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
         "move-left": "move-left 2s ease-in-out",
         "move-right": "move-right 2s ease-in-out",
+        "move-cloud": "move-cloud 60s ease-in-out infinite",
         "move-up": "move-up 2s ease-in-out",
         "shake": "shake 4s ease-in",
         "move-down": "move-down 2s ease-in-out",
         "fade": "fade 1s ease-in-out",
         "show": "show 1s ease-in-out",
-        "move-bird": "move-bird 10s ease-in-out infinite"
+        "move-bird": "move-bird 10s ease-in-out infinite",
+        "move-sun": "move-sun 3s ease-in-out",
+        "move-moon": "move-moon 3s ease-in-out",
+        "out-moon": "out-moon 3s ease-in-out",
+        "out-sun": "out-sun 3s ease-in-out",
+        "morning-sun": "morning-sun 3s ease-in-out",
+        "evening-moon": "evening-moon 3s ease-in-out"
       },
     },
   },

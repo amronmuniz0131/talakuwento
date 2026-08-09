@@ -6,6 +6,6 @@ export default function Sun() {
 
     const [selectedStory, setSelectedStory] = useState(false)
     return (
-        <img src={sun} alt="" onClick={(e) => { e.stopPropagation(); setSelectedStory(!selectedStory); console.log('test') }} className={`hover:cursor-pointer absolute -top-[30%] left-0 transition-transform duration-[1200ms] ease-in-out will-change-transform ${!selectedStory ? '-translate-y-[1080px]' : 'translate-y-0'}`} />
+        <img src={sun} alt="" onClick={(e) => { e.stopPropagation(); setSelectedStory(!selectedStory) }} className={`h-[100px] w-[150px] hover:cursor-pointer bottom-0 left-0 transition-transform duration-[1200ms] ease-in-out absolute will-change-transform ${!selectedStory ? 'animate-move-up -translate-y-[180px]' : 'animate-move-down '}`} />
     );
 }
