@@ -12,6 +12,8 @@ import QuizResultsPage from "./pages/QuizResultsPage";
 import NotFound from "./pages/NotFound";
 import Sample from "./pages/Sample";
 import UnityPage from "./pages/UnityPage";
+import Makiling from "./pages/Makiling";
+import Stories from './pages/Stories/index.tsx'
 
 const queryClient = new QueryClient();
 
@@ -24,15 +26,15 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Navigate to="/login" replace />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/stories" element={<Stories />} />
           <Route path="/homepage" element={
             <ProtectedRoute>
               <Homepage />
             </ProtectedRoute>
           } />
+          <Route path="/makiling" element={<Makiling />} />
           <Route path="/sample" element={
-            <ProtectedRoute>
-              <Sample />
-            </ProtectedRoute>
+            <Sample />
           } />
           <Route path="/roadmap" element={
             <ProtectedRoute>
