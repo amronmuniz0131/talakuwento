@@ -13,7 +13,11 @@ import NotFound from "./pages/NotFound";
 import Sample from "./pages/Sample";
 import UnityPage from "./pages/UnityPage";
 import Makiling from "./pages/Makiling";
-import Stories from './pages/Stories/index.tsx'
+import Stories from './pages/Stories/index.tsx';
+import Palaka from './pages/PalakaKalabaw/index.tsx';
+import Tenor from './pages/Tenor/index.tsx';
+import Langgam from './pages/Langgam/index.tsx';
+import Buwaya from './pages/Buwaya/index.tsx';
 
 const queryClient = new QueryClient();
 
@@ -40,6 +44,18 @@ const App = () => (
             <ProtectedRoute>
               <Homepage />
             </ProtectedRoute>
+          } />
+          <Route path="/tenor" element={
+              <Tenor />
+          } />
+          <Route path="/langgam" element={
+              <Langgam />
+          } />
+          <Route path="/palaka-kalabaw" element={
+              <Palaka />
+          } />
+          <Route path="/buwaya" element={
+              <Buwaya />
           } />
           <Route path="/admin" element={
             <ProtectedRoute>
