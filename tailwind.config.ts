@@ -164,14 +164,14 @@ export default {
           "100%": { transform: "translateX(0)" },
         },
         "morning-sun": {
-          "0%": { backgroundColor: "yellow"},
+          "0%": { backgroundColor: "#06b6d4"},
           "50%": { backgroundColor: "orange" },
           "100%": { backgroundColor: "black" },
         },
         "evening-moon": {
           "0%": { backgroundColor: "black"},
           "50%": { backgroundColor: "orange" },
-          "100%": { backgroundColor: "yellow" },
+          "100%": { backgroundColor: "#06b6d4" },
         }
       },
       animation: {
