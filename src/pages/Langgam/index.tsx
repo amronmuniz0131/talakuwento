@@ -62,7 +62,20 @@ function index() {
                 <div className="absolute bottom-[-2rem] left-[50rem]">
                     <AntJump />
                 </div>
-                <img src={Mound} alt="" className="absolute xs:bottom-0 bottom-[-4rem] xs:scale-[1] scale-[0.6]  right-0" />
+                <img src={Mound} alt="" className="absolute xs:bottom-0 bottom-[0rem]  right-[-10rem]" />
+            </div>
+            <div className="bg-blue-400 relative h-screen w-screen">
+                <img src={grass} alt="" className="absolute bottom-0"/>
+                <div className="items-end flex gap-2 absolute bottom-[-10rem] right-[-50rem] animate-ant-move xs:bottom-[-2rem] ">
+                    <Formation />
+                </div>
+                <div className="absolute bottom-[-2rem] left-[30rem]">
+                    <AntThrow />
+                </div>
+                <div className="absolute bottom-[-2rem] right-[-50rem] animate-ant-move">
+                    <AntJump />
+                </div>
+                <img src={Mound} alt="" className="absolute xs:bottom-0 bottom-[0rem]  right-[-10rem]" />
             </div>
         </HTMLFlipBook>
         {

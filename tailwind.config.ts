@@ -112,6 +112,10 @@ export default {
           "0%": { transform: "translateX(-450px)" },
           "100%": { transform: "translateX(450px)" },
         },
+        "ant-move": {
+          "0%": { transform: "translateX(0px)", right: "50rem", display: "block" },
+          "100%": { transform: "translateX(70rem)", right: "0", display: "none" },
+        },
         "move-up": {
           "0%": { transform: "translateY(0px)" },
           "100%": { transform: "translateY(-180px)" },
@@ -193,7 +197,8 @@ export default {
         "out-moon": "out-moon 3s ease-in-out",
         "out-sun": "out-sun 3s ease-in-out",
         "morning-sun": "morning-sun 3s ease-in-out",
-        "evening-moon": "evening-moon 3s ease-in-out"
+        "evening-moon": "evening-moon 3s ease-in-out",
+        "ant-move": "ant-move 10s ease-out" 
       },
     },
   },

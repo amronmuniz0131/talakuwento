@@ -18,7 +18,7 @@ import Palaka from './pages/PalakaKalabaw/index.tsx';
 import Tenor from './pages/Tenor/index.tsx';
 import Langgam from './pages/Langgam/index.tsx';
 import Buwaya from './pages/Buwaya/index.tsx';
-
+import Putakti from './pages/Putakti/index.tsx'
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -37,7 +37,7 @@ const App = () => (
             </ProtectedRoute>
           } />
           <Route path="/makiling" element={<Makiling />} />
-          <Route path="/sample" element={
+          <Route path="/pinya" element={
             <Sample />
           } />
           <Route path="/roadmap" element={
@@ -50,6 +50,9 @@ const App = () => (
           } />
           <Route path="/langgam" element={
               <Langgam />
+          } />
+          <Route path="/putakti" element={
+              <Putakti />
           } />
           <Route path="/palaka-kalabaw" element={
               <Palaka />
