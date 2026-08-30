@@ -5,6 +5,7 @@ import Lawa from './components/lawa'
 import Makahiya from './components/makahiya'
 import Duryan from './components/duryan'
 import Makopa from './components/makopa'
+import Langgam from './components/langgam'
 
 function Stories() {
   const [story, setStory] = useState('1')
@@ -35,6 +36,10 @@ function Stories() {
         return (
           <Makopa />
         )
+      case '7':
+        return (
+          <Langgam />
+        )
     }
   }
 
@@ -44,7 +49,7 @@ function Stories() {
   }
   
   const nextDay = () => {
-    if(story === '6') return
+    if(story === '7') return
     setStory((Number(story) + 1).toString())
   }
   

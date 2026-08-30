@@ -116,6 +116,10 @@ export default {
           "0%": { transform: "translateX(0px)", right: "50rem", display: "block" },
           "100%": { transform: "translateX(70rem)", right: "0", display: "none" },
         },
+        "ant-left": {
+          "0%": { transform: "translateX(0px)", left: "50rem", display: "block" },
+          "100%": { transform: "translateX(-70rem)", left: "-100rem", display: "none" },
+        },
         "move-up": {
           "0%": { transform: "translateY(0px)" },
           "100%": { transform: "translateY(-180px)" },
@@ -131,6 +135,16 @@ export default {
         "fade": {
           "0%": { "opacity": "100%" },
           "100%": { "opacity": "0%" },
+        },
+        "bg-sun": {
+          "0%": { backgroundColor: "#06b6d4"},
+          "50%": { backgroundColor: "orange" },
+          "100%": { backgroundColor: "black" },
+        },
+        "bg-moon": {
+          "0%": { backgroundColor: "black"},
+          "50%": { backgroundColor: "orange" },
+          "100%": { backgroundColor: "#06b6d4" },
         },
         "show": {
           "0%": {
@@ -151,6 +165,11 @@ export default {
           "50%": { transform: "translateX(80vw)" },
           "100%": { transform: "translateX(0)" }
         },
+        "move-fog": {
+          "0%": { transform: "translateX(0)", scale: "scale(3)" },
+          "50%": { transform: "translateX(80vw)", scale: "scale(2.5)" },
+          "100%": { transform: "translateX(0)", scale: "scale(3)" }
+        },
         "move-sun": {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-80vw)" }
@@ -168,14 +187,14 @@ export default {
           "100%": { transform: "translateX(0)" },
         },
         "morning-sun": {
-          "0%": { backgroundColor: "#06b6d4"},
+          "0%": { backgroundColor: "#60A5FA"},
           "50%": { backgroundColor: "orange" },
           "100%": { backgroundColor: "black" },
         },
         "evening-moon": {
           "0%": { backgroundColor: "black"},
           "50%": { backgroundColor: "orange" },
-          "100%": { backgroundColor: "#06b6d4" },
+          "100%": { backgroundColor: "#60A5FA" },
         }
       },
       animation: {
@@ -186,6 +205,7 @@ export default {
         "move-left": "move-left 2s ease-in-out",
         "move-right": "move-right 2s ease-in-out",
         "move-cloud": "move-cloud 60s ease-in-out infinite",
+        "move-fog": "move-fog 120s infinite",
         "move-up": "move-up 2s ease-in-out",
         "shake": "shake 4s ease-in",
         "move-down": "move-down 2s ease-in-out",
@@ -198,7 +218,10 @@ export default {
         "out-sun": "out-sun 3s ease-in-out",
         "morning-sun": "morning-sun 3s ease-in-out",
         "evening-moon": "evening-moon 3s ease-in-out",
-        "ant-move": "ant-move 10s ease-out" 
+        "ant-move": "ant-move 20s ease-out",
+        "ant-left": "ant-left 20s ease-out",
+        "bg-sun": "bg-sun 3s ease-in-out",
+        "bg-moon": "bg-moon 3s ease-in-out",
       },
     },
   },

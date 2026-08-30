@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import antThrow from '../images/ant-throw-move.gif';
-import antIdle from '../images/ant-running.gif';
+import antIdle from '../images/ant-throw.png';
 function AntThrow() {
     const [playing, setPlaying] = useState(false);
     useEffect(() => {

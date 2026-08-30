@@ -91,18 +91,6 @@ export default function MyBook(props: any) {
                         </div>
                     </div>
                 </div>
-                <div className="bg-orange-500">
-                    <img src={birds} alt="" className="hover:scale-1.2 transition-transform duration-500 cursor-pointer h-full" />
-
-                </div>
-                <div className="bg-gray-600">Page 5</div>
-                <div className="bg-red-500">Page 6</div>
-                <div className="bg-green-500">Page 7</div>
-                <div className="bg-orange-500">Page 8</div>
-                <div className="bg-gray-600">Page 9</div>
-                <div className="bg-red-500">Page 10</div>
-                <div className="bg-green-500">Page 11</div>
-                <div className="bg-orange-500">Page 12</div>
             </HTMLFlipBook>
             {
             currentPage !== 0 && (

@@ -1,11 +1,20 @@
 
-import sun from '../../images/sun.png'
+import Sun1 from '@/images/sun1.png'
+import Moon from '@/images/moon.png'
 import React, { useState, useEffect, useRef } from 'react';
 
-export default function Sun() {
-
-    const [selectedStory, setSelectedStory] = useState(false)
-    return (
-        <img src={sun} alt="" onClick={(e) => { e.stopPropagation(); setSelectedStory(!selectedStory) }} className={`h-[100px] w-[150px] hover:cursor-pointer bottom-0 left-0 transition-transform duration-[1200ms] ease-in-out absolute will-change-transform ${!selectedStory ? 'animate-move-up -translate-y-[180px]' : 'animate-move-down '}`} />
-    );
+function Sun(props) {
+  const [sun, changeSun] = useState(props.trigger)
+  const trigger = (trig) => {
+    changeSun(trig)
+    props.setTrigger(!trig)
+  }
+  return (
+    <div onClick={() => trigger(!sun)} className={`w-screen h-screen z-[99] ${sun ? 'animate-bg-moon bg-[#60A5FA]' : 'animate-bg-sun bg-black'}`}>
+        <img onClick={() => trigger(!sun)} src={Sun1} alt="" className={`absolute top-[0rem] left-[0rem] ${sun ? 'animate-out-sun transform translate-x-[0vw]' : 'animate-move-sun transform translate-x-[-80vw]'}`}  />
+        <img onClick={() => trigger(!sun)} src={Moon} alt="" className={`absolute top-[0rem] right-0 h-48 w-48 bg-white rounded-full text-2xl ${sun ? 'animate-out-moon transform translate-x-[80vw]' : 'animate-move-moon transform rotate-[-45deg]'}`} />
+    </div>
+  )
 }
+
+export default Sun
