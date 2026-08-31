@@ -10,15 +10,17 @@ import StoryPage from "./pages/Story";
 import AdminPage from "./pages/AdminPage";
 import QuizResultsPage from "./pages/QuizResultsPage";
 import NotFound from "./pages/NotFound";
-import Sample from "./pages/Sample";
+import Pinya from "./pages/Pinya/index.tsx";
 import UnityPage from "./pages/UnityPage";
 import Makiling from "./pages/Makiling";
 import Stories from './pages/Stories/index.tsx';
-import Palaka from './pages/PalakaKalabaw/index.tsx';
-import Tenor from './pages/Tenor/index.tsx';
+import Palaka from './pages/PalakaKalabaw';
+import Tenor from './pages/Tenor';
 import Langgam from './pages/Langgam/index.tsx';
 import Buwaya from './pages/Buwaya/index.tsx';
 import Putakti from './pages/Putakti/index.tsx'
+import Makopa from './pages/Makopa/index.tsx'
+import Ibalon from './pages/Ibalon/index.tsx'
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -38,7 +40,7 @@ const App = () => (
           } />
           <Route path="/makiling" element={<Makiling />} />
           <Route path="/pinya" element={
-            <Sample />
+            <Pinya />
           } />
           <Route path="/roadmap" element={
             <ProtectedRoute>
@@ -51,11 +53,17 @@ const App = () => (
           <Route path="/langgam" element={
               <Langgam />
           } />
+          <Route path="/makopa" element={
+              <Makopa />
+          } />
           <Route path="/putakti" element={
               <Putakti />
           } />
           <Route path="/palaka-kalabaw" element={
               <Palaka />
+          } />
+          <Route path="/ibalon" element={
+              <Ibalon />
           } />
           <Route path="/buwaya" element={
               <Buwaya />

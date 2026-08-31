@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Sun from './components/elements/Sun';
+import Sun from '@/components/composables/Sun.tsx';
 import Mountains from './components/images/mountains.png'
 import ground from './components/images/ground.png'
 import Sheep from './components/elements/sheep.tsx';
@@ -55,11 +55,11 @@ function index() {
         useMouseEvents={false}
         onFlip={handleFlip}
         >
-            <div className="bg-blue-400 relative h-screen w-screen">
+            <div className="relative h-screen w-screen">
                 <img src={Mountains} alt="" className="bottom-[30%] absolute w-[100%] h-[70%] right-0" />
+                <Sun trigger={trigger} setTrigger={setTrigger} />
                 <img src={ground} alt="" className="absolute bottom-[-10rem] left-[0rem] w-screen" />
                 {/* <img src={fog} alt="" className="absolute bottom-[0rem] left-[0rem] w-screen h-[100%]" /> */}
-                <Sun trigger={trigger} setTrigger={setTrigger} />
                 <div className="absolute bottom-0">
                     <Sheep />
                 </div>
@@ -84,8 +84,12 @@ function index() {
             <div className="bg-black relative h-screen w-screen">
                 <img src={Mountains} alt="" className="bottom-[30%] absolute w-[100%] h-[70%] right-0" />
                 <img src={ground} alt="" className="absolute bottom-[-10rem] left-[0rem] w-screen" />
-                <img src={fog} alt="" className="absolute bottom-[0rem] left-[0rem] w-screen h-[100%]" />
-                <Sun trigger={trigger} setTrigger={setTrigger} />
+                {/* <img src={fog} alt="" className="absolute bottom-[0rem] left-[0rem] w-screen h-[100%]" />
+                <img src={fog} alt="" className="absolute bottom-[20rem] left-[40rem] w-screen h-[100%]" /> */}
+                <img src={fog} alt="" className="absolute bottom-[20%] left-[-30%] animate-move-fog " />
+                <img src={fog} alt="" className="absolute bottom-[40%] left-[50%] animate-move-fog " />
+                <img src={fog} alt="" className="absolute bottom-[0%] left-[0rem] animate-move-fog " />
+                <Sun trigger={false} />
                 <div className="absolute bottom-0">
                     <Sheep />
                 </div>

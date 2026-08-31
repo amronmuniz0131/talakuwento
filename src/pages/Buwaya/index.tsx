@@ -55,8 +55,9 @@ function index() {
         useMouseEvents={false}
         onFlip={handleFlip}
         >
-            <div className="bg-blue-400 relative h-screen w-screen">
+            <div className="relative h-screen w-screen">
                 <img src={Ground} alt="ground" className="absolute bottom-0 w-screen" />
+                <Sun trigger={trigger} setTrigger={setTrigger} />
                 <Clouds trigger={trigger} />
                 <img src={Mount} alt="mount" className="absolute left-[-8rem] bottom-0 h-full" />
                 <div className="absolute bottom-[-8rem] right-[7rem]">

@@ -1,5 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import HTMLFlipBook from 'react-pageflip';
+import Farmer from './components/elements/farmer.tsx'
+import FarmerGirl from './components/elements/farmer-girl.tsx'
+import ground from './components/images/6.png'
+import FarmerGirl2 from './components/elements/farmer-girl2.tsx'
+import Sun from '@/components/composables/Sun.tsx'
+import background from './components/images/13.png'
+import LadyAngry from './components/elements/lady-angry.tsx'
+import bar from './components/images/9.png'
+import LadyPanic from './components/elements/lady-panic.tsx'
 
 function index() {
     const [dimensions, setDimensions] = useState({
@@ -47,9 +56,63 @@ function index() {
         useMouseEvents={false}
         onFlip={handleFlip}
         >
-            <div className="bg-blue-400 relative h-screen w-screen">
-                
+            <div className="relative h-screen w-screen">
+                <Sun trigger={false} setTrigger={setTrigger} />
+                <img src={ground} className="absolute bottom-0"  alt="" />
+                <div className={`absolute left-1/2 -translate-x-1/2 bottom-0`}>
+                    <Farmer />
+                </div>
             </div>
+            <div className="relative h-screen w-screen">
+                <Sun trigger={false} setTrigger={setTrigger} />
+                <img src={ground} className="absolute bottom-0"  alt="" />
+                <div className={`absolute left-1/2 -translate-x-1/2 bottom-0`}>
+                    <Farmer />
+                </div>
+                <div className={`absolute left-[20%] bottom-4`}>
+                    <FarmerGirl />
+                </div>
+            </div>
+            <div className="relative h-screen w-screen">
+                <Sun trigger={false} setTrigger={setTrigger} />
+                <img src={ground} className="absolute bottom-0"  alt="" />
+                <div className={`absolute left-1/2 -translate-x-1/2 bottom-0`}>
+                    <Farmer />
+                </div>
+                <div className={`absolute left-[20%] bottom-4`}>
+                    <FarmerGirl />
+                </div>
+                <div className={`absolute right-[20%] bottom-4`}>
+                    <FarmerGirl2 />
+                </div>
+            </div>
+            <div className="relative h-screen w-screen">
+                <img src={background} className="absolute bottom-0"  alt="" />
+                <img src={bar} className="absolute bottom-0 right-0"  alt="" />
+                <div className={`absolute flex items-center justify-center left-1/2 -translate-x-1/2 bottom-0`}>
+                    <LadyPanic />
+                    <LadyAngry />
+                </div>
+            </div>
+            <div className="relative h-screen w-screen">
+                <Sun trigger={false} setTrigger={setTrigger} />
+                <img src={ground} className="absolute bottom-0"  alt="" />
+                <div className={`absolute left-1/2 -translate-x-1/2 bottom-0`}>
+                    <Farmer />
+                </div>
+            </div>
+            <div className="relative h-screen w-screen">
+                <img src={background} className="absolute bottom-0"  alt="" />
+                <img src={bar} className="absolute bottom-0 right-0"  alt="" />
+            </div>
+            <div className="relative h-screen w-screen">
+                <Sun trigger={false} setTrigger={setTrigger} />
+                <img src={ground} className="absolute bottom-0"  alt="" />
+                <div className={`absolute left-1/2 -translate-x-1/2 bottom-0`}>
+                    <Farmer />
+                </div>
+            </div>
+            
         </HTMLFlipBook>
         {
             currentPage !== 0 && (
