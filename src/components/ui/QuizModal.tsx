@@ -6,7 +6,7 @@ import { getQuizForStory, QuizQuestion } from '@/data/quiz-data';
 import { saveQuizScore } from '@/services/authService';
 
 interface QuizModalProps {
-    story: Story;
+    story: string;
     onClose: () => void;
 }
 

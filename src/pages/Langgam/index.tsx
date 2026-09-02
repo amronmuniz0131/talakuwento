@@ -12,7 +12,9 @@ import Mountains from './compnents/images/mountains.png'
 import Sun from '@/components/composables/Sun.tsx'
 import AntBoss from './compnents/elements/antBoss'
 import ground from './compnents/images/ground.png'
+import Quiz from '@/components/composables/Quiz.tsx'
 import first from './compnents/audio/langgam-1.wav'
+import antMove from './compnents/images/ant-boss.gif'
 import second from './compnents/audio/langgam-2.wav'
 import third from './compnents/audio/langgam-3.wav'
 import fourth from './compnents/audio/langgam-4.wav'
@@ -42,12 +44,16 @@ function index() {
             return () => window.removeEventListener('resize', handleResize);
         }, []);
 
+        const [isPlayed, setIsPlayed] = useState(false);
+        const audioRef = useRef<HTMLAudioElement | null>(null);
+
         useEffect(() => {
         const audioFiles = [first, second, third, fourth, fifth, sixth];
         const currentAudio = audioFiles[currentPage];
         if (!currentAudio) return;
 
         const playAudio = new Audio(currentAudio);
+        audioRef.current = playAudio;
         playAudio.play().catch(e => console.error("Audio playback failed:", e));
 
         return () => {
@@ -70,6 +76,19 @@ function index() {
                 bookRef.current.pageFlip().flipPrev(); // 👈 Programmatic Prev
             }
         };
+        const [open, setOpen] = useState(false);
+
+        const quiz = {
+            question: "Bakit naghanap ng mas masarap na pagkain ang Bunsong Langgam?",
+            choices: [
+                "Dahil napapagod siya sa paghahakot ng pagkain",
+                "Dahil nagutom siya bigla",
+                "Dahil sinabi ng Tatay Langgam",
+                "Dahil wala nang pagkain sa lungga"
+            ],
+            answerKey: 0
+        };
+
   return (
     <div className="relative z-20">
         {/* @ts-ignore */}
@@ -80,9 +99,8 @@ function index() {
         >
             <div className="relative h-screen w-screen">
                 <Sun setTrigger={setTrigger} trigger={trigger} />
-                <div className="mt-40 ml-4 bg-white absolute top-[30%] px-4 rounded-xl shadow-md w-1/4">
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}  className={`z-[999] mt-40 ml-4 bg-white/30 absolute top-[30%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                     Malapit na naman ang tag-ulan kung kaya’t ang isang mag-anak na langgam ay abalang-abala sa paghahakot ng pagkain para sa kanilang lungga.
-
                 </div>
                 <img src={grass} alt="" className="absolute bottom-0"/>
                 <div className="items-end flex gap-2 absolute bottom-[-10rem] xs:bottom-[-2rem] left-[-8rem]">
@@ -98,7 +116,7 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                 <Sun setTrigger={setTrigger} trigger={trigger} />
-                <div className="mt-40 ml-4 bg-white absolute top-[30%] px-4 rounded-xl shadow-md w-1/4">
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}  className={`z-[999] mt-40 ml-4 bg-white/50 absolute top-[30%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                     “Hindi kayo lilihis ng landas patungo sa ating lungga, dahil sa gawing kaliwa ay may munting kanal,” sabi ni Tatay Langgam.
                     “Hindi po kami lalayo,” sabi ng Unang Munting Langgam.
 
@@ -121,8 +139,8 @@ function index() {
                 <div className="absolute bottom-[2rem] left-[-30rem] animate-ant-left scale-x-[-1]">
                     <img src={antRun} alt="" className="scale-x-[-1]" />
                 </div>
-                <div className="mt-40 ml-4 bg-white px-4 rounded-xl shadow-md w-1/4">
-                Abala sa paghahakot ng pagkain ang bawat isa kaya’t hindi nila napansin na ang Bunsong Langgam ay unti-unting humiwalay sa pila.
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}  className="z-[999] mt-40 ml-4 bg-white px-4 rounded-xl shadow-md w-1/4">
+                    Abala sa paghahakot ng pagkain ang bawat isa kaya’t hindi nila napansin na ang Bunsong Langgam ay unti-unting humiwalay sa pila.
                 </div>
                 <img src={Mound} alt="" className="absolute xs:bottom-0 bottom-[0rem]  right-[-10rem]" />
             </div>
@@ -130,7 +148,7 @@ function index() {
                 <Sun setTrigger={setTrigger} trigger={trigger} />
                 <img src={Mountains} alt="" className="bottom-[30%] absolute w-[100%] h-[70%] right-0" />
                 <img src={ground} alt="" className="absolute bottom-[-10rem] left-[0rem] w-screen" />
-                <div className="mt-40 ml-4 bg-white absolute top-[30%] px-4 rounded-xl shadow-md w-1/4">
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}  className="z-[999] mt-40 ml-4 bg-white absolute top-[30%] px-4 rounded-xl shadow-md w-1/4">
                     “Napapagod naman ako sa paghahakot ng pagkain. Matagal pa naman ang tag-ulan, naghahanda na kami,” sabi sa sarili ng Bunsong Langgam. “Mas mabuti siguro kung maghanap ako ng mas masarap na pagkain.”
                 </div>
                 <div className="scale-x-[-1] absolute right-[20rem] bottom-0">
@@ -155,6 +173,30 @@ function index() {
                 <div className="absolute bottom-0 left-[20rem]">
                     <AntBoss />
                 </div>
+            </div>
+            <div className="relative h-screen w-screen">
+                <div className="absolute top-0 left-[1/2] -translate-x-[-50%]">
+                <AntBoss />
+                </div>
+                <Quiz quiz={quiz} />
+            </div>
+            <div className="relative h-screen w-screen">
+                <div className="absolute top-0 left-[1/2] -translate-x-[-50%]">
+                <AntBoss />
+                </div>
+                <Quiz quiz={quiz} />
+            </div>
+            <div className="relative h-screen w-screen">
+                <div className="absolute top-0 left-[1/2] -translate-x-[-50%]">
+                <AntBoss />
+                </div>
+                <Quiz quiz={quiz} />
+            </div>
+            <div className="relative h-screen w-screen">
+                <div className="absolute top-0 left-[1/2] -translate-x-[-50%]">
+                <AntBoss />
+                </div>
+                <Quiz quiz={quiz} />
             </div>
         </HTMLFlipBook>
         {
