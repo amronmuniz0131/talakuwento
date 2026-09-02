@@ -76,7 +76,6 @@ function index() {
                 bookRef.current.pageFlip().flipPrev(); // 👈 Programmatic Prev
             }
         };
-        const [open, setOpen] = useState(false);
 
         const quiz = {
             question: "Bakit naghanap ng mas masarap na pagkain ang Bunsong Langgam?",
@@ -87,6 +86,36 @@ function index() {
                 "Dahil wala nang pagkain sa lungga"
             ],
             answerKey: 0
+        };
+        const quiz2 = {
+            question: "Saan nahulog si Bunsong langgam?",
+            choices: [
+                "Sa Baha",
+                "Sa puso mo",
+                "Sa Kanal",
+                "Sa akin"
+            ],
+            answerKey: 2
+        };
+        const quiz3 = {
+            question: "Ano ang ginagawa ng mga langgam kapag nalalapit na ang tag-ulan?",
+            choices: [
+                "Kumakain",
+                "Naglalaro",
+                "Naghahakot ng pagkain",
+                "Natutulog"
+            ],
+            answerKey: 2
+        };
+        const quiz4 = {
+            question: "Ano ang aral na matututunan sa Alamat ng Langgam?",
+            choices: [
+                "Makinig sa magulang",
+                "Matutong mag handa ng pangangailangan habang maaga pa",
+                "Kasipagan at pag-iwas sa katamaran",
+                "Lahat ng nabanggit"
+            ],
+            answerKey: 3
         };
 
   return (
@@ -184,19 +213,19 @@ function index() {
                 <div className="absolute top-0 left-[1/2] -translate-x-[-50%]">
                 <AntBoss />
                 </div>
-                <Quiz quiz={quiz} />
+                <Quiz quiz={quiz2} />
             </div>
             <div className="relative h-screen w-screen">
                 <div className="absolute top-0 left-[1/2] -translate-x-[-50%]">
                 <AntBoss />
                 </div>
-                <Quiz quiz={quiz} />
+                <Quiz quiz={quiz3} />
             </div>
             <div className="relative h-screen w-screen">
                 <div className="absolute top-0 left-[1/2] -translate-x-[-50%]">
                 <AntBoss />
                 </div>
-                <Quiz quiz={quiz} />
+                <Quiz quiz={quiz4} />
             </div>
         </HTMLFlipBook>
         {
