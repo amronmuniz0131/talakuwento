@@ -164,12 +164,13 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                 <Sun setTrigger={setTrigger} trigger={trigger} />
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}  className={`z-[999] mt-40 ml-4 bg-white/30 absolute top-[30%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                
+                    Abala sa paghahakot ng pagkain ang bawat isa kaya’t hindi nila napansin na ang Bunsong Langgam ay unti-unting humiwalay sa pila.
+                </div>
                 <img src={grass} alt="" className="absolute bottom-0"/>
                 <div className="absolute bottom-[2rem] left-[-30rem] animate-ant-left scale-x-[-1]">
                     <img src={antRun} alt="" className="scale-x-[-1]" />
-                </div>
-                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}  className="z-[999] mt-40 ml-4 bg-white px-4 rounded-xl shadow-md w-1/4">
-                    Abala sa paghahakot ng pagkain ang bawat isa kaya’t hindi nila napansin na ang Bunsong Langgam ay unti-unting humiwalay sa pila.
                 </div>
                 <img src={Mound} alt="" className="absolute xs:bottom-0 bottom-[0rem]  right-[-10rem]" />
             </div>
@@ -187,6 +188,10 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                 <Sun trigger={trigger} setTrigger={setTrigger} />
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}  className={`z-[999] mt-40 ml-4 bg-white/30 absolute top-[30%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                “Siguro naman ay hindi ako mahuhulog sa kanal kung dahan-dahan akong lalapit,” sabi niya sa sarili.
+                Sa kanyang kasabikan na makalapit, hindi niya napansin ang malakas na ihip ng hangin ay biglang umihip kaya nawalan siya ng panimbang at tuloy-tuloy na nahulog sa kanal.    
+                </div>
                 <img src={Mountains} alt="" className="bottom-[30%] absolute w-[100%] h-[70%] right-0" />
                 <img src={ground} alt="" className="absolute bottom-[-10rem] left-[0rem] w-screen" />
                 <img src={Lake} alt="" className="absolute bottom-[-5rem] left-[0rem] w-2/3" />
@@ -196,6 +201,10 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                 <Sun setTrigger={setTrigger} trigger={trigger} />
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}  className={`z-[999] mt-40 ml-4 bg-white/30 absolute top-[30%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                    Hindi mapakali ang Amang Langgam nang hindi niya makita ang kanyang bunsong anak sa pila. Kaya dali-dali siyang umalis upang ito’y hanapin, hanggang sa mapadako siya sa ipinagbabawal na pook. Pagtingin niya sa ibaba, nakita niyang nakalutang sa tubig ang kanyang bunsong anak.
+                    Masakit man sa kalooban, naibulong niya sa kanyang sarili, “Iyan ang napapala ng mga anak na matigas ang ulo.”    
+                </div>
                 <img src={Mountains} alt="" className="bottom-[30%] absolute w-[100%] h-[70%] right-0" />
                 <img src={ground} alt="" className="absolute bottom-[-10rem] left-[0rem] w-screen" />
                 <img src={Lake} alt="" className="absolute bottom-[-5rem] left-[0rem] w-2/3" />
