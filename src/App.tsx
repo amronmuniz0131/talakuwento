@@ -20,7 +20,9 @@ import Langgam from './pages/Langgam/index.tsx';
 import Buwaya from './pages/Buwaya/index.tsx';
 import Putakti from './pages/Putakti/index.tsx'
 import Makopa from './pages/Makopa/index.tsx'
+import Makahiya from './pages/Makahiya/index.tsx'
 import Ibalon from './pages/Ibalon/index.tsx'
+import MainMenu from './pages/MainMenu/index.tsx'
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -33,6 +35,7 @@ const App = () => (
           <Route path="/" element={<Navigate to="/login" replace />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/stories" element={<Stories />} />
+          <Route path="/menu" element={<MainMenu />} />
           <Route path="/homepage" element={
             <ProtectedRoute>
               <Homepage />
@@ -59,6 +62,9 @@ const App = () => (
           <Route path="/putakti" element={
               <Putakti />
           } />
+          <Route path="/makahiya" element={
+              <Makahiya />
+          } />
           <Route path="/palaka-kalabaw" element={
               <Palaka />
           } />
@@ -67,6 +73,12 @@ const App = () => (
           } />
           <Route path="/buwaya" element={
               <Buwaya />
+          } />
+          <Route path="/pinya" element={
+              <Pinya />
+          } />
+          <Route path="/makiling" element={
+              <Makiling />
           } />
           <Route path="/admin" element={
             <ProtectedRoute>

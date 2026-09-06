@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { ChevronLeft, ChevronRight, House } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import HTMLFlipBook from 'react-pageflip';
 import grass from './compnents/images/6.png'
 import Formation from './compnents/elements/formation'
@@ -21,6 +23,7 @@ import fourth from './compnents/audio/langgam-4.wav'
 import fifth from './compnents/audio/langgam-5.wav'
 import sixth from './compnents/audio/langgam-6.wav'
 function index() {
+    const navigate = useNavigate();
     const [dimensions, setDimensions] = useState({
         width: typeof window !== 'undefined' ? window.innerWidth : 700,
         height: typeof window !== 'undefined' ? window.innerHeight : 500
@@ -239,9 +242,16 @@ function index() {
         </HTMLFlipBook>
         {
             currentPage !== 0 && (
-            <button className="absolute bottom-4 left-0 z-[999] rounded-full h-36 w-36 bg-white " onClick={goPrev}>Previous</button>
+            <button className="absolute bottom-4 left-0 z-[999] rounded-full h-36 w-36 bg-white flex items-center justify-center hover:scale-110 transition-transform" onClick={goPrev}>
+                <ChevronLeft className="w-20 h-20 text-gray-800" strokeWidth={2.5} />
+            </button>
         )}
-        <button className="absolute bottom-4 right-0 z-[999] rounded-full h-36 w-36 bg-white " onClick={goNext}>Next</button>
+        <button className="absolute bottom-4 right-0 z-[999] rounded-full h-36 w-36 bg-white flex items-center justify-center hover:scale-110 transition-transform" onClick={goNext}>
+            <ChevronRight className="w-20 h-20 text-gray-800" strokeWidth={2.5} />
+        </button>
+        <button className="absolute top-4 right-4 z-[999] rounded-full h-16 w-16 bg-white flex items-center justify-center hover:scale-110 transition-transform" onClick={() => navigate('/menu')} title="Bumalik sa Menu">
+            <House className="w-8 h-8 text-gray-800" strokeWidth={2.5} />
+        </button>
         
     </div>
   )

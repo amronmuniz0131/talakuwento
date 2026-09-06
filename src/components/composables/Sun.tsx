@@ -7,9 +7,11 @@ function Sun(props) {
   const [sun, changeSun] = useState(props.trigger)
   const [clicked, setClicked] = useState(false)
   const trigger = (trig) => {
-    changeSun(trig)
-    props.setTrigger(trig)
-    setClicked(true)
+    if (props.setTrigger) {
+      changeSun(trig)
+      props.setTrigger(trig)
+      setClicked(true)
+    }
   }
   return (
     <div onClick={() => trigger(!sun)} className={`w-screen h-screen z-[99] ${sun ? `${clicked ? 'animate-bg-moon ' : ''}bg-[#60A5FA]` : `${clicked ? 'animate-bg-sun ' : ''}bg-black`}`}>
