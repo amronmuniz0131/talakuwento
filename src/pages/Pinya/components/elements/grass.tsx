@@ -8,7 +8,7 @@ useEffect(() => {
         if (isGrass) {
             setTimeout(() => {
                 setIsGrass(false);
-            }, 3000);
+            }, 4000);
         }
     }, [isGrass]);
   return (

@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { ChevronLeft, ChevronRight, House } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import ground from './components/images/ground.png'
 import Sun from '@/components/composables/Sun'
 import Tree from './components/images/tree.png'
@@ -13,8 +15,10 @@ import Goddess from './components/elements/goddess'
 import flood from './components/images/river.gif'
 import clouds from './components/images/rain.gif'
 import WolfSleep from './components/images/wolf-sleep.gif'
+import rain from './components/audio/rain sound.mp3'
 import HTMLFlipBook from 'react-pageflip';
 function index() {
+    const navigate = useNavigate();
     const [dimensions, setDimensions] = useState({
         width: typeof window !== 'undefined' ? window.innerWidth : 700,
         height: typeof window !== 'undefined' ? window.innerHeight : 500
@@ -37,6 +41,19 @@ function index() {
             window.addEventListener('resize', handleResize);
             return () => window.removeEventListener('resize', handleResize);
         }, []);
+
+    useEffect(() => {
+        const rainAudio = new Audio(rain);
+        rainAudio.loop = true;
+
+        if (currentPage === 6) {
+            rainAudio.play().catch(e => console.error("Audio playback failed:", e));
+            return () => {
+                rainAudio.pause();
+                rainAudio.currentTime = 0;
+            };
+        }
+    }, [currentPage]);
     
     
         const bookRef = useRef(null);
@@ -154,9 +171,16 @@ function index() {
         </HTMLFlipBook>
         {
             currentPage !== 0 && (
-            <button className="absolute bottom-4 left-0 z-[999] rounded-full h-36 w-36 bg-white " onClick={goPrev}>Previous</button>
+            <button className="absolute bottom-4 left-0 z-[999] rounded-full h-36 w-36 bg-white flex items-center justify-center hover:scale-110 transition-transform" onClick={goPrev}>
+                <ChevronLeft className="w-20 h-20 text-gray-800" strokeWidth={2.5} />
+            </button>
         )}
-        <button className="absolute bottom-4 right-0 z-[999] rounded-full h-36 w-36 bg-white " onClick={goNext}>Next</button>
+        <button className="absolute bottom-4 right-0 z-[999] rounded-full h-36 w-36 bg-white flex items-center justify-center hover:scale-110 transition-transform" onClick={goNext}>
+            <ChevronRight className="w-20 h-20 text-gray-800" strokeWidth={2.5} />
+        </button>
+        <button className="absolute top-4 right-4 z-[999] rounded-full h-16 w-16 bg-white flex items-center justify-center hover:scale-110 transition-transform" onClick={() => navigate('/menu')} title="Bumalik sa Menu">
+            <House className="w-8 h-8 text-gray-800" strokeWidth={2.5} />
+        </button>
         
     </div>
   )
