@@ -1,10 +1,13 @@
 import { useState, useEffect, useRef } from 'react'
 import antBuild from '../images/boy1-punch.gif';
 import antIdle from '../images/boy1.png';
+import PunchSound from '../audio/punch.mp3';
 function Boy1(props) {
     const [playing, setPlaying] = useState(false);
     useEffect(() => {
         if (playing) {
+          const audio = new Audio(PunchSound);
+           audio.play().catch(e => console.error("Audio playback failed:", e));
             setTimeout(() => {
                 setPlaying(false);
             }, 2000);

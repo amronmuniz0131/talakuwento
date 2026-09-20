@@ -1,10 +1,13 @@
 import { useState, useEffect, useRef } from 'react'
 import antBuild from '../images/pig-move.gif';
 import antIdle from '../images/pig.png';
+import PigSound from '../audio/pig.mp3';
 function Pig(props) {
     const [playing, setPlaying] = useState(false);
     useEffect(() => {
         if (playing) {
+          const audio = new Audio(PigSound);
+           audio.play().catch(e => console.error("Audio playback failed:", e));
             setTimeout(() => {
                 setPlaying(false);
             }, 2000);

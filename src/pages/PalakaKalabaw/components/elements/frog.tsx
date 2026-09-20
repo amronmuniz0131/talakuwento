@@ -1,10 +1,13 @@
 import { useState, useEffect, useRef } from 'react'
 import frogJump from '../images/frog-2-jump.gif';
 import frogIdle from '../images/frog-2-idle.gif';
+import FrogSound from '../audio/frog.mp3';
 function Frog() {
     const [playing, setPlaying] = useState(false);
     useEffect(() => {
         if (playing) {
+          const audio = new Audio(FrogSound);
+           audio.play().catch(e => console.error("Audio playback failed:", e));
             setTimeout(() => {
                 setPlaying(false);
             }, 2000);

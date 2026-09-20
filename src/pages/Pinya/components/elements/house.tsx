@@ -3,7 +3,7 @@ import house from '../../images/house.png'
 import closeHouse from '../images/door-close.gif'
 import openHouse from '../images/door-open.gif'
 
-function House() {
+function Home() {
 const [selected, setSelected] = useState(false)
 const [playKey, setPlayKey] = useState(0)
   return (
@@ -17,4 +17,4 @@ const [playKey, setPlayKey] = useState(0)
   )
 }
 
-export default House
+export default Home
