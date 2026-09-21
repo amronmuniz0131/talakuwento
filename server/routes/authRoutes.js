@@ -4,6 +4,7 @@ import {
   loginUser,
   getProfile,
   saveQuizScore,
+  getMyQuizScores,
 } from '../controllers/authController.js';
 import { protect } from '../middleware/authMiddleware.js';
 
@@ -13,5 +14,6 @@ router.post('/register', registerUser);
 router.post('/login', loginUser);
 router.get('/profile', protect, getProfile);
 router.post('/scores', protect, saveQuizScore);
+router.get('/scores/me', protect, getMyQuizScores);
 
 export default router;
