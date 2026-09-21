@@ -17,9 +17,11 @@ import Stories from './pages/Stories/index.tsx';
 import Palaka from './pages/PalakaKalabaw';
 import Tenor from './pages/Tenor';
 import Langgam from './pages/Langgam/index.tsx';
+import Kalahi from './pages/Kalahi/index.tsx';
 import Buwaya from './pages/Buwaya/index.tsx';
 import Putakti from './pages/Putakti/index.tsx'
 import Makopa from './pages/Makopa/index.tsx'
+import Ulalim from './pages/Ulalim/index.tsx'
 import Makahiya from './pages/Makahiya/index.tsx'
 import Ibalon from './pages/Ibalon/index.tsx'
 import MainMenu from './pages/MainMenu/index.tsx'
@@ -62,8 +64,14 @@ const App = () => (
           <Route path="/putakti" element={
               <Putakti />
           } />
+          <Route path="/kalahi" element={
+              <Kalahi />
+          } />
           <Route path="/makahiya" element={
               <Makahiya />
+          } />
+          <Route path="/ulalim" element={
+              <Ulalim />
           } />
           <Route path="/palaka-kalabaw" element={
               <Palaka />

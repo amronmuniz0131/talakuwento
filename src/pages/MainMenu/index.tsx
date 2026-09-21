@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Lock } from 'lucide-react';
 
 import SunImg from '@/images/sun1.png';
 import MountainsImg from '@/pages/PalakaKalabaw/components/images/mountains.png';
@@ -23,7 +23,9 @@ interface StoryOption {
   route: string;
   image: string;
   label: string;
+  locked?: boolean;
 }
+const level = Number(localStorage.getItem("level") ?? 0);
 
 const storyOptions: StoryOption[] = [
   { id: 'tenor', title: 'Pabula: Ibig Maging Tenor', subtitle: 'Kuwento ng Tupa at Kuliglig', route: '/tenor', image: TenorImg, label: 'Tenor' },
@@ -60,20 +62,28 @@ export default function MainMenu() {
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-10">
-              {storyOptions.map((story) => (
+              {storyOptions.map((story, index) => (
                 <button
                   key={story.id}
-                  onClick={() => setSelected(story)}
-                  className="group flex flex-col items-center gap-3 bg-white/80 backdrop-blur-sm rounded-3xl p-5 shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 w-52"
+                  onClick={() => index <= level && setSelected(story)}
+                  disabled={index > level}
+                  className={`group flex flex-col items-center gap-3 bg-white/80 backdrop-blur-sm rounded-3xl p-5 shadow-lg w-52 transition-all duration-300 ${
+                    index > level
+                      ? 'opacity-50 grayscale cursor-not-allowed'
+                      : 'hover:shadow-2xl hover:-translate-y-2 hover:scale-105'
+                  }`}
                 >
                   <div className="h-28 flex items-center justify-center">
                     <img
                       src={story.image}
                       alt={story.label}
-                      className="max-h-28 object-contain drop-shadow-md group-hover:scale-110 transition-transform duration-300"
+                      className={`max-h-28 object-contain drop-shadow-md ${index > level ? '' : 'group-hover:scale-110 transition-transform duration-300'}`}
                     />
                   </div>
-                  <span className="text-lg font-bold text-gray-800">{story.label}</span>
+                  <span className="flex items-center gap-2 text-lg font-bold text-gray-800">
+                    {index > level && <Lock className="w-5 h-5 text-gray-500" />}
+                    {story.label}
+                  </span>
                 </button>
               ))}
             </div>
