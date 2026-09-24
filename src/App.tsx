@@ -23,6 +23,9 @@ import Putakti from './pages/Putakti/index.tsx'
 import Makopa from './pages/Makopa/index.tsx'
 import Ulalim from './pages/Ulalim/index.tsx'
 import Makahiya from './pages/Makahiya/index.tsx'
+import Indarapatra from './pages/Indarapatra/index.tsx'
+import Bulusan from './pages/Bulusan/index.tsx'
+import LamAng from './pages/Lam-ang/index.tsx'
 import Ibalon from './pages/Ibalon/index.tsx'
 import MainMenu from './pages/MainMenu/index.tsx'
 const queryClient = new QueryClient();
@@ -64,11 +67,20 @@ const App = () => (
           <Route path="/putakti" element={
               <Putakti />
           } />
+          <Route path="/bulusan" element={
+              <Bulusan />
+          } />
           <Route path="/kalahi" element={
               <Kalahi />
           } />
+          <Route path="/lam-ang" element={
+              <LamAng />
+          } />
           <Route path="/makahiya" element={
               <Makahiya />
+          } />
+          <Route path="/indarapatra" element={
+              <Indarapatra />
           } />
           <Route path="/ulalim" element={
               <Ulalim />
