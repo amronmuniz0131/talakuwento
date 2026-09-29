@@ -12,6 +12,10 @@ import tree from './components/images/tree.png'
 import SheepDead from './components/elements/sheepDead.tsx'
 import notes from './components/images/notes.gif'
 import HTMLFlipBook from 'react-pageflip';
+import first from './components/audio/tupa-1.wav'
+import second from './components/audio/tupa-2.wav'
+import third from './components/audio/tupa-3.wav'
+import fourth from './components/audio/tupa-4.wav'
 function index() {
     const navigate = useNavigate();
     const [dimensions, setDimensions] = useState({
@@ -80,7 +84,26 @@ function index() {
         }, []);
     
     
-        const bookRef = useRef(null);
+        const [isPlayed, setIsPlayed] = useState(false);
+    const audioRef = useRef<HTMLAudioElement | null>(null);
+
+    useEffect(() => {
+        const audioFiles = [first, second, third, fourth];
+        const currentAudio = audioFiles[currentPage];
+        if (!currentAudio) return;
+
+        const playAudio = new Audio(currentAudio);
+        audioRef.current = playAudio;
+        playAudio.play().catch(e => console.error("Audio playback failed:", e));
+
+        return () => {
+            playAudio.pause();
+            playAudio.currentTime = 0;
+        };
+    }, [currentPage]);
+
+
+    const bookRef = useRef(null);
     
         const goNext = () => {
             if (bookRef.current) {
@@ -104,9 +127,7 @@ function index() {
             <div className="relative h-screen w-screen">
                 <img src={Mountains} alt="" className="bottom-[30%] absolute w-[100%] h-[70%] right-0" />
                 <Sun trigger={trigger} setTrigger={setTrigger} />
-                <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body right-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                    Isang umaga, ang tupa ay naglalakad galing sa pastulang malapit sa libis ng bundok. Siya ay nanginain doon ng sariwang damo. Walang anu-ano’y nakarinig siya ng isang magandang tinig mula sa kung saan. Dahil sa pananabik, hinanap niya ang pinagmulan ng tinig na iyon.
                    </div>
@@ -125,9 +146,7 @@ function index() {
                 <img src={ground} alt="" className="absolute bottom-[-10rem] left-[0rem] w-screen" />
                 {/* <img src={fog} alt="" className="absolute bottom-[0rem] left-[0rem] w-screen h-[100%]" /> */}
                 <Sun trigger={trigger} setTrigger={setTrigger} />
-                <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body right-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                    Ang tinig ay nagmula sa isang kuliglig. Pinilit niyang hanapin ito. Sa kabutihang palad, natagpuan niya ang kuliglig. Dahil sa pagkagiliw niya sa tinig nito, tinanong niya kung ano ang sikreto ng kanyang magandang tinig.
                    </div>
@@ -148,9 +167,7 @@ function index() {
                 <img src={fog} alt="" className="absolute bottom-[40%] left-[50%] animate-move-fog " />
                 <img src={fog} alt="" className="absolute bottom-[0%] left-[0rem] animate-move-fog " />
                 <Sun trigger={false} />
-                <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body right-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                    Sinabi ng kuliglig na ang kinakain lamang niya ay hamog. Dahil dito, tumigil sa pagkain ng damo ang tupa at hamog na lamang ang kanyang sinipsip. Lumipas ang mga araw, nanghina ang tupa.
                    </div>
@@ -164,9 +181,7 @@ function index() {
                 <img src={ground} alt="" className="absolute bottom-[-10rem] left-[0rem] w-screen" />
                 <img src={fog} alt="" className="absolute bottom-[0rem] left-[0rem] w-screen h-[100%]" />
                 <Sun trigger={trigger} setTrigger={setTrigger} />
-                <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body right-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                    Sa pagnanais na maging isang “tenor,” tiniis niyang hindi kumain ng damo at hamog lamang ang kanyang sinipsip. Sa kalaunan, hindi niya ito nakayanan, at ang tupa ay namatay sa gutom.
                    </div>

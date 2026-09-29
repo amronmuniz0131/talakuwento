@@ -12,6 +12,13 @@ import LadyAngry from './components/elements/lady-angry.tsx'
 import bar from './components/images/9.png'
 import LadyPanic from './components/elements/lady-panic.tsx'
 import Quiz from '@/components/composables/Quiz.tsx'
+import first from './components/audio/putakti-1.wav'
+import second from './components/audio/putakti-2.wav'
+import third from './components/audio/putakti-3.wav'
+import fourth from './components/audio/putakti-4.wav'
+import fifth from './components/audio/putakti-5.wav'
+import sixth from './components/audio/putakti-6.wav'
+import seventh from './components/audio/putakti-7.wav'
 
 function index() {
     const questions  = [
@@ -81,7 +88,26 @@ function index() {
         }, []);
     
     
-        const bookRef = useRef(null);
+        const [isPlayed, setIsPlayed] = useState(false);
+    const audioRef = useRef<HTMLAudioElement | null>(null);
+
+    useEffect(() => {
+        const audioFiles = [first, second, third, fourth, fifth, sixth, seventh];
+        const currentAudio = audioFiles[currentPage];
+        if (!currentAudio) return;
+
+        const playAudio = new Audio(currentAudio);
+        audioRef.current = playAudio;
+        playAudio.play().catch(e => console.error("Audio playback failed:", e));
+
+        return () => {
+            playAudio.pause();
+            playAudio.currentTime = 0;
+        };
+    }, [currentPage]);
+
+
+    const bookRef = useRef(null);
     
         const goNext = () => {
             if (bookRef.current) {
@@ -104,9 +130,7 @@ function index() {
         >
             <div className="relative h-screen w-screen">
                 <Sun trigger={false} setTrigger={setTrigger} />
-                <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body text-2xl mt-40 ml-4 bg-white/30 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                    Si Lalapindigowa-i ay isang masipag na magsasaka. May dalawa siyang asawa
                    </div>
@@ -117,9 +141,7 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                 <Sun trigger={false} setTrigger={setTrigger} />
-                <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body text-2xl mt-40 ml-4 bg-white/30 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                    Si Odang
                    </div>
@@ -133,9 +155,7 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                 <Sun trigger={false} setTrigger={setTrigger} />
-                <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body text-2xl mt-40 ml-4 bg-white/30 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                    at si Orak
                    </div>
@@ -153,9 +173,7 @@ function index() {
             <div className="relative h-screen w-screen">
                 <img src={background} className="absolute bottom-0"  alt="" />
                 <img src={bar} className="absolute bottom-0 right-0"  alt="" />
-                <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body text-2xl mt-40 ml-4 bg-white/30 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                    Pagkaraan ng maraming araw at buwan ng paghahatid ng pagkain, nagsawa ang mga asawa ni Lalapindigowa-i. Sa daan papuntang bukid, nagalit si Odang at tumangging magdala ng pagkain. Si Orak naman ay ayaw ring maghatid ng pagkain.
                    </div>
@@ -166,9 +184,7 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                 <Sun trigger={false} setTrigger={setTrigger} />
-                <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body text-2xl mt-40 ml-4 bg-white/30 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                    Samantala, si Lalapindigowa-i ay nagutom sa kahihintay sa kanyang dalawang asawa. Pagkaraan ng ilang oras ng paghihintay, nagpasya siyang umuwi. Sa daan, nakita ng gutom na si Lalapindigowa-i ang basag na kaserola at ang mga asawang naluto.
                    </div>
@@ -180,18 +196,14 @@ function index() {
             <div className="relative h-screen w-screen">
                 <img src={background} className="absolute bottom-0"  alt="" />
                 <img src={bar} className="absolute bottom-0 right-0"  alt="" />
-                <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body text-2xl mt-40 ml-4 bg-white/30 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                   Pagkaraan ng ilang oras ng paghihintay, nagpasya siyang umuwi. Sa daan, Hindi na nakita ni Lalapindigowa-i ang mga asawa.
                    </div>
             </div>
             <div className="relative h-screen w-screen">
                 <Sun trigger={false} setTrigger={setTrigger} />
-                <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body text-2xl mt-40 ml-4 bg-white/30 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                    Nagalit siya sa mga asawang naging pabaya at sa sinapit ng mga ito. Dahil sa matinding gutom, hinigpitan niya ang kanyang sinturon. Simula noon, ang beywang ni Lalapindigowa-i ay lumiit nang lumiit dahil wala na siyang mga asawang magluluto para sa kanya.
                    </div>
