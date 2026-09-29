@@ -17,6 +17,11 @@ import Jail from './components/images/jail.png'
 import Tree from './components/images/tree.png'
 import Baby from './components/elements/baby.tsx'
 import Quiz from '@/components/composables/Quiz.tsx'
+import first from './components/audio/ulalim-1.wav'
+import second from './components/audio/ulalim-2.wav'
+import third from './components/audio/ulalim-3.wav'
+import fourth from './components/audio/ulalim-4.wav'
+import fifth from './components/audio/ulalim-5.wav'
 
 import HTMLFlipBook from 'react-pageflip';
 function index() {
@@ -86,21 +91,26 @@ function index() {
             return () => window.removeEventListener('resize', handleResize);
         }, []);
 
-    useEffect(() => {
-        // const rainAudio = new Audio(rain);
-        // rainAudio.loop = true;
+    const [isPlayed, setIsPlayed] = useState(false);
+    const audioRef = useRef<HTMLAudioElement | null>(null);
 
-        // if (currentPage === 6) {
-        //     rainAudio.play().catch(e => console.error("Audio playback failed:", e));
-        //     return () => {
-        //         rainAudio.pause();
-        //         rainAudio.currentTime = 0;
-        //     };
-        // }
+    useEffect(() => {
+        const audioFiles = [first, second, third, fourth, fifth];
+        const currentAudio = audioFiles[currentPage];
+        if (!currentAudio) return;
+
+        const playAudio = new Audio(currentAudio);
+        audioRef.current = playAudio;
+        playAudio.play().catch(e => console.error("Audio playback failed:", e));
+
+        return () => {
+            playAudio.pause();
+            playAudio.currentTime = 0;
+        };
     }, [currentPage]);
-    
-    
-        const bookRef = useRef(null);
+
+
+    const bookRef = useRef(null);
     
         const goNext = () => {
             if (bookRef.current) {
@@ -123,9 +133,7 @@ function index() {
         >
             <div className="relative h-screen w-screen">
                 <Sun setTrigger={setTrigger} trigger={trigger} />
-                <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body left-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                    Ang kuwento ay nagsimula sa nakatakdang kasal nina Ya-u at Dulaw nang makapulot sila ng nganga o ua (tawag ng mga taga-Kalinga). Ang magkasintahan ay naanyayahan sa isang pistahan sa Madogyaya.
 
@@ -147,9 +155,7 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                 <Sun trigger={false} />
-                <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body left-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                    Kinabukasan, sa kalagitnaan ng gabi, dumating si Dulaw sa bahay nina Dulliyaw. Habang sila ay kumakain ng nganga, sinabi niya sa babae na siya ay naparoon upang isama ito sa kanilang bahay. Nagulat si Dulliyaw sa sinabi ng lalaki. Pagkatapos noon, nagkagulo sa nayon.
                 </div>
@@ -161,9 +167,7 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                 <Sun setTrigger={setTrigger} trigger={trigger} />
-                <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body left-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                    Dumating si Guwela, ang kumander ng garison, kasama ang kanyang mga sundalo sa kaitaasan ng Kalinga. Iniutos niyang dakpin si Dulaw na nakaupo pa rin sa puno. Nang mapag-alamang marami ang tutol sa kanya, hindi na siya lumaban at nagpadaig nang siya ay ikinulong sa Sakbawan.
 
@@ -180,9 +184,7 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                 <Sun setTrigger={setTrigger} trigger={trigger} />
-                <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body left-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                    Makalipas ang tatlong taon ng pagkakabilanggo, siya ay naging payat at mahina. Humingi si Dulliyaw ng nganga kay Dulaw. Kinuha ni Dulaw ang natitirang nganga sa bahay at ito ay pinagpirapiraso, ngunit bago niya maibigay kay Dulliyaw, bigla itong nawala.
 
@@ -199,9 +201,7 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                 <Sun setTrigger={setTrigger} trigger={trigger} />
-                <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body right-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                    Samantala, sa pook ng Magobya, naliligo si Duranaw. Sa kanyang pagligo sa ilog, nakapulot siya ng nganga at kinain ito nang walang alinlangan.
 Matapos niyang nguyain ang nganga, siya ay biglang nagbuntis hanggang sa magsilang siya ng isang malusog na lalaki na pinangalanang Banna. Lumipas ang tatlong taon. Si Banna ay mahilig makipaglaro sa mga Agta, subalit madalas siyang tinutukso ng mga kalaro.

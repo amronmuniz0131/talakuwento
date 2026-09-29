@@ -12,6 +12,10 @@ import Quiz from '@/components/composables/Quiz.tsx'
 
 import { useNavigate } from 'react-router-dom';
 import HTMLFlipBook from 'react-pageflip';
+import first from './components/audio/indarapatra-1.wav'
+import second from './components/audio/indarapatra-2.wav'
+import third from './components/audio/indarapatra-3.wav'
+import fourth from './components/audio/indarapatra-4.wav'
 function index() {
     const navigate = useNavigate();
     const [dimensions, setDimensions] = useState({
@@ -38,7 +42,26 @@ function index() {
         }, []);
     
     
-        const bookRef = useRef(null);
+        const [isPlayed, setIsPlayed] = useState(false);
+    const audioRef = useRef<HTMLAudioElement | null>(null);
+
+    useEffect(() => {
+        const audioFiles = [first, second, third, fourth];
+        const currentAudio = audioFiles[currentPage];
+        if (!currentAudio) return;
+
+        const playAudio = new Audio(currentAudio);
+        audioRef.current = playAudio;
+        playAudio.play().catch(e => console.error("Audio playback failed:", e));
+
+        return () => {
+            playAudio.pause();
+            playAudio.currentTime = 0;
+        };
+    }, [currentPage]);
+
+
+    const bookRef = useRef(null);
     
         const goNext = () => {
             if (bookRef.current) {
@@ -104,9 +127,7 @@ function index() {
         >
             <div className="relative h-screen w-screen">
                <Sun setTrigger={setTrigger} trigger={trigger} />
-                <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body right-[5%] text-2xl mt-40 ml-4 bg-white/30 absolute top-[10%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                     Si Indarapatra ay ang matapang na hari ng Mantapuli. Nabalitaan niya ang madalas na pananalakay ng mga dambuhalang ibon at mababangis na hayop sa ibang panig ng Mindanao. Labis niyang ikinalungkot ang mga nangyayaring ito sa mga naninirahan sa labas ng kaharian ng Mantapuli.
                     </div>
@@ -121,9 +142,7 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                <Sun setTrigger={setTrigger} trigger={trigger} />
-                <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body right-[5%] text-2xl mt-40 ml-4 bg-white/30 absolute top-[10%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                     Ipinatawag ni Indarapatra ang kanyang kapatid na si Sulayman, isang matapang na kawal. Inutusan niya si Sulayman na puksain ang mga ibon at hayop na namiminsala sa mga tao. 
                 </div>
@@ -138,9 +157,7 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                <Sun setTrigger={setTrigger} trigger={trigger} />
-                <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body right-[5%] text-2xl mt-40 ml-4 bg-white/30 absolute top-[10%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                     nagtanim si Indarapatra ng isang halaman sa may durungawan. Aniya kay Sulayman, “Sa pamamagitan ng halamang ito ay malalaman ko ang nangyayari sa iyo. Kapag ito ay nalanta, nangangahulugan na ikaw ay namatay.”
                 </div>
@@ -155,9 +172,7 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                <Sun setTrigger={setTrigger} trigger={trigger} />
-                <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body right-[5%] text-2xl mt-40 ml-4 bg-white/30 absolute top-[10%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                     Nagtungo naman si Sulayman sa Matutum. Hinanap niya ang halimaw na kumakain ng tao na kilala sa tawag na Tarabusaw. Hinagupit siya ni Tarabusaw gamit ang punongkahoy. Nang manghina si Tarabusaw, saka siya sinaksak ni Sulayman ng kanyang sibat.
                     </div>

@@ -125,7 +125,7 @@ function index() {
                 // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
                 // setIsPlayed(!isPlayed); } }}  
                 className={`z-[999] font-body text-2xl mt-40 ml-4 bg-white/30 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
-                    Dali-dali silang umuwi at ibinalita ito sa kanilang ina.
+                    Nakita nila ang isang kalabaw na nanginginain ng sariwang damo. Sa tingin ng mumunting mga palaka, napakalaking palaka ang kalabaw. Dali-dali silang umuwi at ibinalita ito sa kanilang ina.
                 </div>
                 <img src={Lake} alt="" className="absolute bottom-[-5rem] left-[0rem] w-2/3" />
                 <div className="h-1/2 absolute right-0 bottom-[20%]">

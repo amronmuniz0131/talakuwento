@@ -12,6 +12,11 @@ import grass from './components/images/grass.png'
 import { useNavigate } from 'react-router-dom';
 import Quiz from '@/components/composables/Quiz.tsx'
 import HTMLFlipBook from 'react-pageflip';
+import first from './components/audio/kalahi-1.wav'
+import second from './components/audio/kalahi-2.wav'
+import third from './components/audio/kalahi-3.wav'
+import fourth from './components/audio/kalahi-4.wav'
+import fifth from './components/audio/kalahi-5.wav'
 function index() {
   const questions =[
     {
@@ -80,7 +85,26 @@ function index() {
         }, []);
     
     
-        const bookRef = useRef(null);
+        const [isPlayed, setIsPlayed] = useState(false);
+    const audioRef = useRef<HTMLAudioElement | null>(null);
+
+    useEffect(() => {
+        const audioFiles = [first, null, second, third, fourth, null, fifth];
+        const currentAudio = audioFiles[currentPage];
+        if (!currentAudio) return;
+
+        const playAudio = new Audio(currentAudio);
+        audioRef.current = playAudio;
+        playAudio.play().catch(e => console.error("Audio playback failed:", e));
+
+        return () => {
+            playAudio.pause();
+            playAudio.currentTime = 0;
+        };
+    }, [currentPage]);
+
+
+    const bookRef = useRef(null);
     
         const goNext = () => {
             if (bookRef.current) {
@@ -105,9 +129,7 @@ function index() {
         >
             <div className="relative h-screen w-screen">
                <Sun setTrigger={setTrigger} trigger={trigger} />
-               <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+               <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body right-[5%] text-2xl mt-40 ml-4 bg-white/30 absolute top-[10%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                   Mula nang mapatakbo ni Toniong Tandang si Tenoriong Talisain, ito ay humanap ng ibang lipunan at madaling nakapamayagpag muli sa Talisain.
                 </div>
@@ -131,9 +153,7 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                <Sun setTrigger={setTrigger} trigger={trigger} />
-               <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+               <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body right-[5%] text-2xl mt-40 ml-4 bg-white/30 absolute top-[10%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                   Ang mga katyaw na Leghorn doon ay madaling nasilaw sa balitang bilis at lakas ni Tenoriong Talisain. Madali rin niyang naging kaibigan ang isa sa pinakamagandang banyagang manok na si Lolitang Leghorn.
                   </div>
@@ -148,9 +168,7 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                <Sun setTrigger={setTrigger} trigger={trigger} />
-               <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+               <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body right-[5%] text-2xl mt-40 ml-4 bg-white/30 absolute top-[10%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                   “Naku!” ang bulalas ng dumalaga. “Ako pala ay sinisiraan ni Tenoriong Talisain. Ako raw ay naging kasintahan niya…”
                    </div>
@@ -170,9 +188,7 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                <Sun setTrigger={setTrigger} trigger={trigger} />
-               <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+               <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body right-[5%] text-2xl mt-40 ml-4 bg-white/30 absolute top-[10%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                   Makalipas ang ilang araw, dumating si Toniong Tandang na kasama si Tenoriong Talisain. Gusot-gusot na ang balahibo ng katyaw. Pilay pa ang isang paa, pasa-pasa ang buong katawan, at halos hindi na makagulapay.
                   </div>
@@ -218,9 +234,7 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                <Sun setTrigger={setTrigger} trigger={trigger} />
-               <div 
-                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
-                // setIsPlayed(!isPlayed); } }}  
+               <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}
                 className={`z-[999] font-body right-[5%] text-2xl mt-40 ml-4 bg-white/30 absolute top-[10%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                   “Nakita mo na, Tenoriong Talisain!” ang wika ni Aling Martang Manok. “Iyang kalahi, kahit masamain mo, ay hindi ka matitiis.”
                   </div>
