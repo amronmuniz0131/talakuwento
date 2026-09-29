@@ -123,6 +123,13 @@ function index() {
         >
             <div className="relative h-screen w-screen">
                 <Sun setTrigger={setTrigger} trigger={trigger} />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body left-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                   Ang kuwento ay nagsimula sa nakatakdang kasal nina Ya-u at Dulaw nang makapulot sila ng nganga o ua (tawag ng mga taga-Kalinga). Ang magkasintahan ay naanyayahan sa isang pistahan sa Madogyaya.
+
+                   </div>
                 <img src={ground} className="absolute bottom-0 left-0 w-full" />
                 <img src={Kubo} className="absolute bottom-[10%] right-0 h-2/3" />
                 <div className="absolute bottom-[-10%] left-0">
@@ -139,7 +146,13 @@ function index() {
                 </div>
             </div>
             <div className="relative h-screen w-screen">
-                <Sun setTrigger={setTrigger} trigger={trigger} />
+                <Sun trigger={false} />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body left-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                   Kinabukasan, sa kalagitnaan ng gabi, dumating si Dulaw sa bahay nina Dulliyaw. Habang sila ay kumakain ng nganga, sinabi niya sa babae na siya ay naparoon upang isama ito sa kanilang bahay. Nagulat si Dulliyaw sa sinabi ng lalaki. Pagkatapos noon, nagkagulo sa nayon.
+                </div>
                 <img src={ground} className="absolute bottom-0 left-0 w-full" />
                 <img src={Kubo} className="absolute bottom-[10%] right-0 h-2/3" />
                 <div className="absolute bottom-[-10%] left-[50%] translate-x-[-50%]">
@@ -148,6 +161,13 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                 <Sun setTrigger={setTrigger} trigger={trigger} />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body left-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                   Dumating si Guwela, ang kumander ng garison, kasama ang kanyang mga sundalo sa kaitaasan ng Kalinga. Iniutos niyang dakpin si Dulaw na nakaupo pa rin sa puno. Nang mapag-alamang marami ang tutol sa kanya, hindi na siya lumaban at nagpadaig nang siya ay ikinulong sa Sakbawan.
+
+                   </div>
                 <img src={guy} className="absolute bottom-0 right-0" />
                 <img src={Jail} className="absolute bottom-0 right-0 h-screen w-screen" />
                 <img src={ground} className="absolute bottom-0 left-0 w-full" />
@@ -160,6 +180,33 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                 <Sun setTrigger={setTrigger} trigger={trigger} />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body left-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                   Makalipas ang tatlong taon ng pagkakabilanggo, siya ay naging payat at mahina. Humingi si Dulliyaw ng nganga kay Dulaw. Kinuha ni Dulaw ang natitirang nganga sa bahay at ito ay pinagpirapiraso, ngunit bago niya maibigay kay Dulliyaw, bigla itong nawala.
+
+                   </div>
+                <img src={guy} className="absolute bottom-0 right-0" />
+                <img src={Jail} className="absolute bottom-0 right-0 h-screen w-screen" />
+                <img src={ground} className="absolute bottom-0 left-0 w-full" />
+                <div className="absolute bottom-0 right-[20%]">
+                    <Guard />
+                </div>
+                <div className="absolute bottom-0 right-[40%]">
+                    <Guard />
+                </div>
+            </div>
+            <div className="relative h-screen w-screen">
+                <Sun setTrigger={setTrigger} trigger={trigger} />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body right-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                   Samantala, sa pook ng Magobya, naliligo si Duranaw. Sa kanyang pagligo sa ilog, nakapulot siya ng nganga at kinain ito nang walang alinlangan.
+Matapos niyang nguyain ang nganga, siya ay biglang nagbuntis hanggang sa magsilang siya ng isang malusog na lalaki na pinangalanang Banna. Lumipas ang tatlong taon. Si Banna ay mahilig makipaglaro sa mga Agta, subalit madalas siyang tinutukso ng mga kalaro.
+
+                   </div>
                 <img src={grass} className="absolute bottom-0 left-0 w-full" />
                 <img src={Mount} alt="mount" className="absolute left-[-8rem] bottom-0 h-full" />
                 <img src={Tree} alt="tree" className="absolute right-[30%] bottom-0 h-full" />

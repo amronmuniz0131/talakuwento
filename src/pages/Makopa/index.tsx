@@ -108,6 +108,12 @@ function index() {
         >
             <div className="relative w-screen h-screen">
                 <Sun trigger={trigger} setTrigger={setTrigger} />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body left-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                    Noong unang panahon, ang mga tao ay mababait at masunurin. Sila ay masisipag at madasalin. Namumuhay sila nang tahimik at maligaya sa isang nayon.
+                    </div>
                 <Clouds trigger={trigger} setTrigger={setTrigger} />
                 <div className="absolute flex items-end bottom-[0rem] left-[0rem]">
                     <Home />
@@ -119,6 +125,13 @@ function index() {
                 <div className="absolute bottom-0 w-screen">
                     <img src={ground} alt="" />
                 </div>
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body right-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                   Nabalitaan ng mga masasamang loob mula sa isang malayong pook ang tungkol sa gintong kampana. Inakala nilang magkakaroon din sila ng masaganang buhay kung mapapasakanila ito. Lihim nilang pinagplanuhan kung paano nila mananakaw ang kampana.
+
+                    </div>
                 <div className="absolute bottom-0 right-0">
                     <Church setBell={setBell} />
                 </div>
@@ -131,6 +144,12 @@ function index() {
                 <div className="absolute bottom-0 w-screen">
                     <img src={ground} alt="" />
                 </div>
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body right-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                   Sa kabutihang palad, nabalitaan ng mga pari ang balak ng mga masasamang loob. Ibinaba nila ang kampana at ibinaon ito sa bakuran ng simbahan. Nangako silang ipagtatanggol nila ang kampana kahit pa ikamatay nila ito.
+                    </div>
                 <div className="absolute bottom-0 right-0">
                     <img src={bellMissing} alt="" />
                 </div>
@@ -140,6 +159,12 @@ function index() {
                 <div className="absolute bottom-0 w-screen">
                     <img src={ground} alt="" />
                 </div>
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body right-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                   Galit na galit ang mga masasamang loob nang dumating sila sa simbahan. Hinanap nila nang mabuti ang kampana ngunit hindi nila ito makita. Dahil sa matinding galit, pinatay nila ang lahat ng tao sa loob ng simbahan sapagkat walang nagturo sa pinagtaguan ng kampana.
+                   </div>
                 <div className="absolute bottom-0 right-0">
                     <img src={bellMissing} alt="" />
                 </div>
@@ -154,6 +179,12 @@ function index() {
                 <div className="absolute bottom-0 w-screen">
                     <img src={ground} alt="" />
                 </div>
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body right-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                   Isang araw, nagulat na lamang ang mga mamamayan nang makita nila ang isang punong tumubo at mabilis na lumaki sa bakuran ng simbahan. Nagbunga ito ng marami at ang mga bunga nito ay hugis kampana, makintab na pula sa labas, at maputi na parang bulak ang laman.
+                   </div>
                 <div className="absolute bottom-0 right-0">
                     <img src={bellMissing} alt="" />
                 </div>

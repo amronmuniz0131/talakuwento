@@ -103,6 +103,12 @@ function index() {
                 <img src={Mountains} alt="" className="bottom-[30%] absolute w-[100%] h-[70%] right-0" />
                 <img src={ground} alt="" className="absolute bottom-[-10rem] left-[0rem] w-screen" />
                 <Sun trigger={trigger} setTrigger={setTrigger} />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body text-2xl mt-40 ml-4 bg-white/30 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                    Pagkatapos ng ilang araw na pag-ulan ay sumikat na ang araw. Maganda na ang panahon.   
+                </div>
                 <img src={Lake} alt="" className="absolute bottom-[-5rem] left-[0rem] w-2/3" />
                 <div className="h-1/2 absolute right-0 bottom-[20%]">
                     <Cow />
@@ -115,6 +121,12 @@ function index() {
                 <img src={Mountains} alt="" className="bottom-[30%] absolute w-[100%] h-[70%] right-0" />
                 <img src={ground} alt="" className="absolute bottom-[-10rem] left-[0rem] w-screen" />
                 <Sun trigger={trigger} setTrigger={setTrigger} />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body text-2xl mt-40 ml-4 bg-white/30 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                    Dali-dali silang umuwi at ibinalita ito sa kanilang ina.
+                </div>
                 <img src={Lake} alt="" className="absolute bottom-[-5rem] left-[0rem] w-2/3" />
                 <div className="h-1/2 absolute right-0 bottom-[20%]">
                     <Cow />
@@ -136,6 +148,12 @@ function index() {
                 <img src={Mountains} alt="" className="bottom-[30%] absolute w-[100%] h-[70%] right-0" />
                 <img src={ground} alt="" className="absolute bottom-[-10rem] left-[0rem] w-screen" />
                 <Sun trigger={trigger} setTrigger={setTrigger} />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body text-2xl mt-40 ml-4 bg-white/30 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                    “Ina, nakakita kami ng napakalaking palaka!” sabay-sabay na sabi ng mga anak na palaka.
+                </div>
                 <img src={Lake} alt="" className="absolute bottom-[-5rem] left-[0rem] w-2/3" />
                 <div className="absolute right-[30%] bottom-[20%]">
                     <FrogMom />
@@ -148,6 +166,12 @@ function index() {
                 <img src={Mountains} alt="" className="bottom-[30%] absolute w-[100%] h-[70%] right-0" />
                 <img src={ground} alt="" className="absolute bottom-[-10rem] left-[0rem] w-screen" />
                 <Sun trigger={trigger} setTrigger={setTrigger} />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body text-2xl mt-40 ml-4 bg-white/30 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                    “Ay hindi! Ako ang pinakamalaking palaka. Tingnan ninyo ako,” wika ni Inang Palaka at ubos-lakas siyang huminga nang huminga hanggang ang kaniyang tiyan ay pumutok.
+                </div>
 
                 <img src={Lake} alt="" className="absolute bottom-[-5rem] left-[0rem] w-2/3" />
                 <div className="absolute right-[30%] bottom-[20%]">

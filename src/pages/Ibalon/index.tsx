@@ -127,7 +127,7 @@ function index() {
                 // setIsPlayed(!isPlayed); } }}  
                 className={`z-[999] font-body right-[5%] text-2xl mt-40 ml-4 bg-white/30 absolute top-[10%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                     Si Baltog ay nakarating sa lupain ng Ibalon dahil sa pagtugis niya sa isang malaking baboy-ramo. Siya ay nagmula pa sa lupain ng Batavara. Mayaman ang lupain ng Ibalon at doon na siya nanirahan. Siya ang kinilalang hari ng Ibalon. Naging maunlad ang pamumuhay ng mga tao.
-                </div>
+                    </div>
                 <img src={ground} alt="" className="absolute bottom-0" />
                 <img src={Tree} alt="" className="absolute bottom-[5%] right-0" />
                 <div className="absolute left-0 bottom-[0%]">
@@ -171,7 +171,7 @@ function index() {
                 // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
                 // setIsPlayed(!isPlayed); } }}  
                 className={`z-[999] font-body right-[5%] text-2xl mt-40 ml-4 bg-white/30 absolute top-[10%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
-                    Nalaman ni Bantong na sa araw ay tulog na tulog si Rabut, kaya’t pinatay niya ito habang natutulog.
+                    Tumulong sina Handiong at Bantong kay Baltog 
                 </div>
                 <img src={ground} alt="" className="absolute bottom-0" />
                 <img src={Tree} alt="" className="absolute bottom-[5%] right-0" />
@@ -190,6 +190,12 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                 <Sun trigger={true} setTrigger={undefined} />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body right-[5%] text-2xl mt-40 ml-4 bg-white/30 absolute top-[10%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                    Nalaman ni Bantong na sa araw ay tulog na tulog si Rabut, kaya’t pinatay niya ito habang natutulog.
+                </div>
                 <img src={ground} alt="" className="absolute bottom-0" />
                 <img src={Tree} alt="" className="absolute bottom-[5%] right-0" />
                 <div className="absolute flex left-[-15%] bottom-[0%]">
@@ -235,8 +241,8 @@ function index() {
                 // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
                 // setIsPlayed(!isPlayed); } }}  
                 className={`z-[999] font-body left-1/2 transform -translate-x-1/2 text-2xl bg-white/30 absolute bottom-[10%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
-                    Si Indarapatra ay ang matapang na hari ng Mantapuli. Nabalitaan niya ang madalas na pananalakay ng mga dambuhalang ibon at mababangis na hayop sa ibang panig ng Mindanao. Labis niyang ikinalungkot ang mga nangyayaring ito sa mga naninirahan sa labas ng kaharian ng Mantapuli.
-                    </div>
+                    Nasira ang mga bahay at pananim. Nalunod ang maraming tao. Nakatakas lamang ang ilan na nakaakyat sa tuktok ng matataas na bundok. Nang kumati ang tubig, nagbago na ang anyo ng Ibalon. Nagsimula muli ang panibagong buhay ng mga tao sa pamumuno ni Bantong.
+                </div>
                 <img src={flood} alt="" className="absolute bottom-[-10%]" />
                 <img src={clouds} alt="" className='absolute top-0 left-0' />
                 <img src={clouds} alt="" className='absolute top-0 right-0' />

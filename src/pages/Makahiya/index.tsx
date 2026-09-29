@@ -108,11 +108,23 @@ function index() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <Tree />
                 </div>
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body text-2xl mt-40 ml-4 bg-white/70 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                Noong unang panahon, may isang punong ligaw na tumutubo sa gubat. Ito ay napakaganda. Ang mga dahon nito ay pinung-pino. Ang mga bulaklak nito ay kulay lila at kumikislap na tila mga bituin. Dahil dito, naging mapagmataas ang punong ligaw.    
+                </div>
             </div>
             <div className="bg-blue-400 relative h-screen w-screen">
                 <img src={Background} alt="" className="h-full w-full object-cover"  />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <Tree />
+                </div>
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body text-2xl mt-40 ml-4 bg-white/70 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                Minsan, umulan nang malakas. Ang masipag na si Langgam, na naghahakot ng kanyang inipong pagkain, ay inabutan ng ulan sa daan. Lumaki ang tubig kaya umakyat si Langgam sa pinakamalapit na halaman. Nagkataong iyon pala ang punong ligaw.
                 </div>
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <Ant />
@@ -129,6 +141,12 @@ function index() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <Tree />
                 </div>
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body text-2xl mt-40 ml-4 bg-white/70 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                Nagalit ang punong ligaw. Ipinagtabuyan nito ang kaawa-awang si Langgam. Inuga nito ang mga tangkay kaya nahulog sa tubig ang kawawang langgam.
+                </div>
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
                     <AntFall />
                 </div>
@@ -144,6 +162,12 @@ function index() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <Tree />
                 </div>
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body text-2xl mt-40 ml-4 bg-white/70 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+               Naawa si Alitaptap kay Langgam. Pumitas siya ng dahon at ipinaanod ito sa tubig. 
+               </div>
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
                     <Ant />
                 </div>
@@ -162,6 +186,12 @@ function index() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <Tree />
                 </div>
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body text-2xl mt-40 ml-4 bg-white/70 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                    Kumapit dito si Langgam at naanod hanggang sa sumabit siya sa Punong Tubo. Pinatuloy siya ni Tubo at binigyan pa ng pagkain.
+               </div>
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
                     <Ant />
                 </div>
@@ -180,6 +210,12 @@ function index() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <Tree />
                 </div>
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body right-[20%] text-2xl mt-40 ml-4 bg-white/70 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                    Nasaksihan ni Diwata, ang makatarungang pinuno ng mga hayop at halaman, ang buong pangyayari. Pinagkalooban niya ng gantimpala sina Alitaptap at Tubo dahil sa kanilang kabutihan.
+                    </div>
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
                     <Ant />
                 </div>
@@ -201,6 +237,12 @@ function index() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <Tree />
                 </div>
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body right-[20%] text-2xl mt-40 ml-4 bg-white/70 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                    Binigyan ni Diwata ng ilaw si Alitaptap at ginawa niyang matamis ang Punong Tubo. Samantala, pinarusahan niya ang palalo at mapagmataas na punong ligaw. Nawala ang taglay nitong bango at tinubuan ng mga tinik ang katawan nito.
+                    </div>
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2  scale-x-[-1]">
                     <Ant />
                 </div>
@@ -213,6 +255,13 @@ function index() {
             </div>
             <div className="bg-blue-400 relative h-screen w-screen">
                 <img src={Background} alt="" className="h-full w-full object-cover"  />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body right-0 text-2xl mt-40 ml-4 bg-white/70 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                    Nahiya ang punong ligaw kaya itinitikom nito ang mga dahon tuwing ito ay nasasaling. Mula noon, nakilala ang punong ligaw sa tawag na Makahiya.
+
+                    </div>
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <TreeShy />
                 </div>
