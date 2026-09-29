@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import Rabbit from '../images/mother-crying.gif'
 import Bunny from '../images/mother-crying.png'
+import crying from '../audio/crying female.mp3'
 
 function Grass() {
 const [isGrass, setIsGrass] = useState(false)
 useEffect(() => {
         if (isGrass) {
+          const audio = new Audio(crying);
+           audio.play().catch(e => console.error("Audio playback failed:", e));
             setTimeout(() => {
+              audio.pause()
                 setIsGrass(false);
-            }, 4000);
+            }, 5000);
         }
     }, [isGrass]);
   return (

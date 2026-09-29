@@ -16,9 +16,52 @@ import guy from './components/images/spear.png'
 import Jail from './components/images/jail.png'
 import Tree from './components/images/tree.png'
 import Baby from './components/elements/baby.tsx'
+import Quiz from '@/components/composables/Quiz.tsx'
 
 import HTMLFlipBook from 'react-pageflip';
 function index() {
+    const questions = [
+            {
+        "question": "Sino ang anak ni Dulaw?",
+        "choices": [
+            "Ya-u",
+            "Banna",
+            "Dulliyaw",
+            "Duranaw"
+        ],
+        "answerKey": 1
+    },
+    {
+        "question": "Ano ang nakapagbuntis kay Duranaw?",
+        "choices": [
+            "Tubig",
+            "Nganga",
+            "Alak",
+            "Prutas"
+        ],
+        "answerKey": 1
+    },
+    {
+        "question": "Saan nakulong si Dulaw?",
+        "choices": [
+            "Magobya",
+            "Madogyaya",
+            "Sakbawan",
+            "Kalinga"
+        ],
+        "answerKey": 2
+    },
+    {
+        "question": "Sino ang pumatay kay Dulliyaw?",
+        "choices": [
+            "Dulaw",
+            "Banna",
+            "Ya-u",
+            "Duranaw"
+        ],
+        "answerKey": 1
+    },
+    ]
     const navigate = useNavigate();
     const [dimensions, setDimensions] = useState({
         width: typeof window !== 'undefined' ? window.innerWidth : 700,
@@ -124,6 +167,11 @@ function index() {
                     <Baby />
                 </div>
             </div>
+            {questions.map((d) => (
+                    <div key={d.question} className="relative h-screen w-screen">
+                        <Quiz quiz={d} />
+                    </div>
+                ))}
         </HTMLFlipBook>
         {
             currentPage !== 0 && (

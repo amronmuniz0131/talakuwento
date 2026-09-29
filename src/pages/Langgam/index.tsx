@@ -131,7 +131,7 @@ function index() {
         >
             <div className="relative h-screen w-screen">
                 <Sun setTrigger={setTrigger} trigger={trigger} />
-                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}  className={`z-[999] mt-40 ml-4 bg-white/30 absolute top-[30%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}  className={`font-body text-2xl z-[999] mt-40 ml-4 bg-white/30 absolute top-[30%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                     Malapit na naman ang tag-ulan kung kaya’t ang isang mag-anak na langgam ay abalang-abala sa paghahakot ng pagkain para sa kanilang lungga.
                 </div>
                 <img src={grass} alt="" className="absolute bottom-0"/>
@@ -148,7 +148,7 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                 <Sun setTrigger={setTrigger} trigger={trigger} />
-                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}  className={`z-[999] mt-40 ml-4 bg-white/50 absolute top-[30%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}  className={`z-[999] font-body text-2xl font-body mt-40 ml-4 bg-white/50 absolute top-[30%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                     “Hindi kayo lilihis ng landas patungo sa ating lungga, dahil sa gawing kaliwa ay may munting kanal,” sabi ni Tatay Langgam.
                     “Hindi po kami lalayo,” sabi ng Unang Munting Langgam.
 
@@ -167,7 +167,7 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                 <Sun setTrigger={setTrigger} trigger={trigger} />
-                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}  className={`z-[999] mt-40 ml-4 bg-white/30 absolute top-[30%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}  className={`z-[999] font-body text-2xl mt-40 ml-4 bg-white/30 absolute top-[30%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                 
                     Abala sa paghahakot ng pagkain ang bawat isa kaya’t hindi nila napansin na ang Bunsong Langgam ay unti-unting humiwalay sa pila.
                 </div>
@@ -181,7 +181,7 @@ function index() {
                 <Sun setTrigger={setTrigger} trigger={trigger} />
                 <img src={Mountains} alt="" className="bottom-[30%] absolute w-[100%] h-[70%] right-0" />
                 <img src={ground} alt="" className="absolute bottom-[-10rem] left-[0rem] w-screen" />
-                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}  className="z-[999] mt-40 ml-4 bg-white absolute top-[30%] px-4 rounded-xl shadow-md w-1/4">
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}  className="z-[999] text-2xl mt-40 ml-4 bg-white absolute top-[30%] px-4 rounded-xl shadow-md w-1/4">
                     “Napapagod naman ako sa paghahakot ng pagkain. Matagal pa naman ang tag-ulan, naghahanda na kami,” sabi sa sarili ng Bunsong Langgam. “Mas mabuti siguro kung maghanap ako ng mas masarap na pagkain.”
                 </div>
                 <div className="scale-x-[-1] absolute right-[20rem] bottom-0">
@@ -191,7 +191,7 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                 <Sun trigger={trigger} setTrigger={setTrigger} />
-                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}  className={`z-[999] mt-40 ml-4 bg-white/30 absolute top-[30%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}  className={`z-[999] font-body text-2xl font-body mt-40 ml-4 bg-white/30 absolute top-[30%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                 “Siguro naman ay hindi ako mahuhulog sa kanal kung dahan-dahan akong lalapit,” sabi niya sa sarili.
                 Sa kanyang kasabikan na makalapit, hindi niya napansin ang malakas na ihip ng hangin ay biglang umihip kaya nawalan siya ng panimbang at tuloy-tuloy na nahulog sa kanal.    
                 </div>
@@ -204,7 +204,7 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                 <Sun setTrigger={setTrigger} trigger={trigger} />
-                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}  className={`z-[999] mt-40 ml-4 bg-white/30 absolute top-[30%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                <div onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } setIsPlayed(!isPlayed); } }}  className={`z-[999] font-body text-2xl mt-40 ml-4 bg-white/30 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                     Hindi mapakali ang Amang Langgam nang hindi niya makita ang kanyang bunsong anak sa pila. Kaya dali-dali siyang umalis upang ito’y hanapin, hanggang sa mapadako siya sa ipinagbabawal na pook. Pagtingin niya sa ibaba, nakita niyang nakalutang sa tubig ang kanyang bunsong anak.
                     Masakit man sa kalooban, naibulong niya sa kanyang sarili, “Iyan ang napapala ng mga anak na matigas ang ulo.”    
                 </div>

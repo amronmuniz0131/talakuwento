@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, House } from 'lucide-react';
-import ground from './components/images/grass.png'
 import { useNavigate } from 'react-router-dom';
 import Sun from '@/components/composables/Sun.tsx'
 import Bird from './components/elements/bird.tsx'
@@ -10,7 +9,9 @@ import River from './components/images/river.gif'
 import Spear from './components/elements/spear.tsx'
 import Kubo from './components/images/kubo.png'
 import Group from './components/elements/group.tsx'
-
+import Quiz from '@/components/composables/Quiz.tsx'
+import Ground from './components/images/bg.png'
+import Mountain from './components/images/mountain.png'
 import HTMLFlipBook from 'react-pageflip';
 function index() {
     const navigate = useNavigate();
@@ -64,6 +65,48 @@ function index() {
                 bookRef.current.pageFlip().flipPrev(); // 👈 Programmatic Prev
             }
         };
+        const questions = [
+                {
+                    "question": "Sino ang pinuno ng mga katutubo?",
+                    "choices": [
+                        "Datu Bulan",
+                        "Datu Juan",
+                        "Datu Pedro",
+                        "Datu Jose"
+                    ],
+                    "answerKey": 0
+                },
+                {
+                    "question": "Anong hayop ang dumating sa kanilang lugar?",
+                    "choices": [
+                        "Aso",
+                        "Ibon",
+                        "Agila",
+                        "Kabayo"
+                    ],
+                    "answerKey": 1
+                },
+                {
+                    "question": "Ano ang ginamit ni Datu Bulan sa pagpatay sa ibon?",
+                    "choices": [
+                        "Espada",
+                        "Sibat",
+                        "Busog at pana",
+                        "Itak"
+                    ],
+                    "answerKey": 2
+                },
+                {
+                    "question": "Ano ang naging kulay ng tubig?",
+                    "choices": [
+                        "Asul",
+                        "Berde",
+                        "Dilaw",
+                        "Pula"
+                    ],
+                    "answerKey": 3
+                },
+        ]
   return (
     <div className="relative z-20">
         {/* @ts-ignore */}
@@ -74,10 +117,18 @@ function index() {
         >
             <div className="relative h-screen w-screen">
                 <Sun setTrigger={setTrigger} trigger={trigger} />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body text-2xl mt-40 ml-4 bg-white/30 absolute top-[20%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                    Hindi mapakali ang Amang Langgam nang hindi niya makita ang kanyang bunsong anak sa pila. Kaya dali-dali siyang umalis upang ito’y hanapin, hanggang sa mapadako siya sa ipinagbabawal na pook. Pagtingin niya sa ibaba, nakita niyang nakalutang sa tubig ang kanyang bunsong anak.
+                    Masakit man sa kalooban, naibulong niya sa kanyang sarili, “Iyan ang napapala ng mga anak na matigas ang ulo.”    
+                </div>
                 <img src={River} alt="" className="absolute w-screen bottom-0 left-0" />
             </div>
             <div className="relative h-screen w-screen">
                 <Sun setTrigger={setTrigger} trigger={trigger} />
+                <img src={Ground} className="absolute bottom-0 right-0 w-screen" />
                 <img src={Kubo} className="absolute bottom-[5%] right-0 w-1/2" />
                 <div className='absolute left-0 bottom-0'>
                     <Group />
@@ -86,6 +137,7 @@ function index() {
             <div className="relative h-screen w-screen">
                 <Sun setTrigger={setTrigger} trigger={trigger} />
                 <img src={Kubo} className="absolute bottom-[5%] right-0 w-1/2" />
+                <img src={Ground} className="absolute bottom-0 right-0 w-screen" />
                 <div className='absolute left-[30%] bottom-0'>
                     <Spear />
                 </div>
@@ -131,6 +183,11 @@ function index() {
                     <Spear />
                 </div>
             </div>
+            {questions.map((d) => (
+                    <div key={d.question} className="relative h-screen w-screen">
+                        <Quiz quiz={d} />
+                    </div>
+                ))}
         </HTMLFlipBook>
         {
             currentPage !== 0 && (

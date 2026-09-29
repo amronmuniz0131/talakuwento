@@ -1,13 +1,17 @@
 import { useState, useEffect, useRef } from 'react'
 import antBuild from '../images/mom-hug.gif';
 import antIdle from '../images/mom-hug.png';
+import hugging from '../audio/hugging.mp3'
 function Hug() {
     const [playing, setPlaying] = useState(false);
     useEffect(() => {
         if (playing) {
+
+          const audio = new Audio(hugging);
+           audio.play().catch(e => console.error("Audio playback failed:", e));
             setTimeout(() => {
                 setPlaying(false);
-            }, 2000);
+            }, 5000);
         }
     }, [playing]);
   return (

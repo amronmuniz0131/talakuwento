@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Sun from '@/components/composables/Sun.tsx';
 import Mountains from './components/images/mountains.png'
 import ground from './components/images/ground.png'
+import Quiz from '@/components/composables/Quiz.tsx'
 import Sheep from './components/elements/sheep.tsx';
 import Firefly from './components/elements/firefly.tsx';
 import fog from './components/images/fog.png'
@@ -21,6 +22,48 @@ function index() {
     const [playing, setPlaying] = useState(true);
     const [currentPage, setCurrentPage] = useState(0);
     const [trigger, setTrigger] = useState(true)
+    const questions = [
+            {
+        "question": "Sino ang nakarinig ng magandang tinig?",
+        "choices": [
+            "Tupa",
+            "Kuliglig",
+            "Aso",
+            "Pusa"
+        ],
+        "answerKey": 0
+    },
+    {
+        "question": "Kaninong tinig ang narinig ng tupa?",
+        "choices": [
+            "Ibon",
+            "Kuliglig",
+            "Kalabaw",
+            "Kambing"
+        ],
+        "answerKey": 1
+    },
+    {
+        "question": "Ano ang kinakain ng kuliglig?",
+        "choices": [
+            "Damo",
+            "Prutas",
+            "Hamog",
+            "Binhi"
+        ],
+        "answerKey": 2
+    },
+    {
+        "question": "Ano ang nangyari sa tupa?",
+        "choices": [
+            "Lumakas",
+            "Nakatakas",
+            "Namatay",
+            "Nakatulog"
+        ],
+        "answerKey": 2
+    },
+    ]
     const handleFlip = (e: any) => {
             setCurrentPage(e.data);
         };
@@ -109,6 +152,11 @@ function index() {
                 <img src={tree} alt="" className="absolute bottom-[5rem] right-[0rem] scale-[0.75]" />
                 
             </div>
+            {questions.map((d) => (
+                <div key={d.question} className="relative h-screen w-screen">
+                    <Quiz quiz={d} />
+                </div>
+            ))}
         </HTMLFlipBook>
         {
             currentPage !== 0 && (

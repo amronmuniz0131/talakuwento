@@ -10,6 +10,7 @@ import Dancing from './components/elements/dancing.tsx'
 import Solo from './components/elements/solo.tsx'
 import Group from './components/elements/group.tsx'
 import HTMLFlipBook from 'react-pageflip';
+import Quiz from '@/components/composables/Quiz.tsx'
 import Guitar from './components/elements/guitar.tsx'
 import Gong from './components/elements/gong.tsx'
 import Boss from './components/elements/boss.tsx'
@@ -66,6 +67,48 @@ function index() {
                 bookRef.current.pageFlip().flipPrev(); // 👈 Programmatic Prev
             }
         };
+        const questions = [
+                {
+        "question": "Ano ang pangalan ng bayani?",
+        "choices": [
+            "Lam-ang",
+            "Don Juan",
+            "Sumarang",
+            "Naguilian"
+        ],
+        "answerKey": 0
+    },
+    {
+        "question": "Sino ang ama ni Lam-ang?",
+        "choices": [
+            "Don Juan",
+            "Sumarang",
+            "Ines",
+            "Nalbuan"
+        ],
+        "answerKey": 0
+    },
+    {
+        "question": "Sino ang pinakasalan ni Lam-ang?",
+        "choices": [
+            "Namongan",
+            "Ines Kannoyan",
+            "Maria",
+            "Aling Rosa"
+        ],
+        "answerKey": 1
+    },
+    {
+        "question": "Anong hayop ang kasama ni Lam-ang?",
+        "choices": [
+            "Kabayo",
+            "Pusa",
+            "Aso at tandang",
+            "Kalabaw"
+        ],
+        "answerKey": 2
+    },
+        ]
   return (
     <div className="relative z-20">
         {/* @ts-ignore */}
@@ -126,6 +169,11 @@ function index() {
                     <Gong />
                 </div>
             </div>
+            {questions.map((d) => (
+                    <div key={d.question} className="relative h-screen w-screen">
+                        <Quiz quiz={d} />
+                    </div>
+                ))}
         </HTMLFlipBook>
         {
             currentPage !== 0 && (

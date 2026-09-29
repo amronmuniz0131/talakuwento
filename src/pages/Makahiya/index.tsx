@@ -10,12 +10,57 @@ import Ant from './components/elements/ant';
 import AntFall from './components/elements/ant-fall';
 import Goddess from './components/elements/goddess';
 import TreeShy from './components/elements/tree-shy';
+import Quiz from '@/components/composables/Quiz.tsx'
+
 function index() {
     const navigate = useNavigate();
     const [dimensions, setDimensions] = useState({
         width: typeof window !== 'undefined' ? window.innerWidth : 700,
         height: typeof window !== 'undefined' ? window.innerHeight : 500
     });
+
+    const questions = [
+            {
+        "question": "Sino ang masipag na hayop?",
+        "choices": [
+            "Langgam",
+            "Alitaptap",
+            "Diwata",
+            "Paruparo"
+        ],
+        "answerKey": 0
+    },
+    {
+        "question": "Sino ang tumulong kay Langgam?",
+        "choices": [
+            "Bubuyog",
+            "Alitaptap",
+            "Ibon",
+            "Tipaklong"
+        ],
+        "answerKey": 1
+    },
+    {
+        "question": "Sino ang pinuno ng mga hayop at halaman?",
+        "choices": [
+            "Tubo",
+            "Langgam",
+            "Diwata",
+            "Alitaptap"
+        ],
+        "answerKey": 2
+    },
+    {
+        "question": "Bakit tinawag na Makahiya ang punong ligaw?",
+        "choices": [
+            "May tinik",
+            "Mabango",
+            "Nagsasara ang dahon",
+            "Matamis"
+        ],
+        "answerKey": 2
+    },
+    ]
 
     const [playing, setPlaying] = useState(true);
     const [currentPage, setCurrentPage] = useState(0);
@@ -172,7 +217,11 @@ function index() {
                     <TreeShy />
                 </div>
             </div>
-
+            {questions.map((d) => (
+                    <div key={d.question} className="relative h-screen w-screen">
+                        <Quiz quiz={d} />
+                    </div>
+                ))}
         </HTMLFlipBook>
         {
             currentPage !== 0 && (

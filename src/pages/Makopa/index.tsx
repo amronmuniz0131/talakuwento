@@ -14,6 +14,7 @@ import Guy from './components/elements/guy.tsx'
 import Father from './components/images/9.png'
 import bellMissing from './components/images/bell-missing.png'
 import Makopa from './components/elements/makopa.tsx'
+import Quiz from '@/components/composables/Quiz.tsx'
 
 function index() {
     const navigate = useNavigate();
@@ -55,6 +56,48 @@ function index() {
                 bookRef.current.pageFlip().flipPrev(); // 👈 Programmatic Prev
             }
         };
+        const questions = [
+                {
+        "question": "Ano ang nasa simbahan?",
+        "choices": [
+            "Kampana",
+            "Krus",
+            "Aklat",
+            "Kandila"
+        ],
+        "answerKey": 0
+    },
+    {
+        "question": "Sino ang nagtago ng kampana?",
+        "choices": [
+            "Pari",
+            "Sundalo",
+            "Hari",
+            "Magsasaka"
+        ],
+        "answerKey": 0
+    },
+    {
+        "question": "Ano ang hugis ng bunga?",
+        "choices": [
+            "Bilog",
+            "Kampana",
+            "Puso",
+            "Bituin"
+        ],
+        "answerKey": 1
+    },
+    {
+        "question": "Ano ang pangalan ng puno?",
+        "choices": [
+            "Makahiya",
+            "Pinya",
+            "Makopa",
+            "Duryan"
+        ],
+        "answerKey": 2
+    },
+        ]
   return (
     <div className="relative z-20">
         {/* @ts-ignore */}
@@ -118,7 +161,11 @@ function index() {
                     <Makopa />
                 </div>
             </div>
-            
+            {questions.map((d) => (
+                    <div key={d.question} className="relative h-screen w-screen">
+                        <Quiz quiz={d} />
+                    </div>
+                ))}
         </HTMLFlipBook>
         {
             currentPage !== 0 && (

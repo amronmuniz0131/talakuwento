@@ -11,6 +11,8 @@ import crocsEat from './components/images/5.png'
 import Sun from './components/elements/Sun.tsx'
 import Clouds from './components/elements/Clouds.tsx'
 import HTMLFlipBook from 'react-pageflip';
+import Quiz from '@/components/composables/Quiz.tsx'
+
 function index() {
     const navigate = useNavigate();
     const [dimensions, setDimensions] = useState({
@@ -50,6 +52,48 @@ function index() {
                 bookRef.current.pageFlip().flipPrev(); // 👈 Programmatic Prev
             }
         };
+        const questions = [
+                {
+        "question": "Saan nakatira ang buwaya?",
+        "choices": [
+            "Ilog Pasig",
+            "Dagat",
+            "Bundok",
+            "Gubat"
+        ],
+        "answerKey": 0
+    },
+    {
+        "question": "Sino ang gusto niyang pakasalan?",
+        "choices": [
+            "Agila",
+            "Paboreal",
+            "Maya",
+            "Kalapati"
+        ],
+        "answerKey": 1
+    },
+    {
+        "question": "Ano ang gusto ng paboreal?",
+        "choices": [
+            "Pagkain",
+            "Perlas at diyamante",
+            "Bahay",
+            "Ginto"
+        ],
+        "answerKey": 1
+    },
+    {
+        "question": "Ano ang ginawa ng buwaya sa paboreal?",
+        "choices": [
+            "Tinulungan",
+            "Pinakain",
+            "Kinain",
+            "Pinalayas"
+        ],
+        "answerKey": 2
+    },
+        ]
   return (
     <div className="relative z-20">
         {/* @ts-ignore */}
@@ -61,6 +105,12 @@ function index() {
             <div className="relative h-screen w-screen">
                 <img src={Ground} alt="ground" className="absolute bottom-0 w-screen" />
                 <Sun trigger={trigger} setTrigger={setTrigger} />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body right-[5%] text-2xl mt-40 ml-4 bg-white/30 absolute top-[10%] px-4 rounded-xl shadow-md w-1/4 ${!trigger ?' text-black' : ' text-white'}`}>
+                    Noong unang panahon, may isang batang buwayang namumuhay sa pampang ng Ilog Pasig. Siya ay mabangis at ubod ng sakim. Dahil dito, walang ibang hayop ang naglakas-loob na lumapit sa kanya.
+                </div>
                 <Clouds trigger={trigger} />
                 <img src={Mount} alt="mount" className="absolute left-[-8rem] bottom-0 h-full" />
                 <div className="absolute bottom-[-8rem] right-[7rem]">
@@ -74,6 +124,13 @@ function index() {
                 <img src={Ground} alt="ground" className="absolute bottom-0 w-screen" />
                 <Clouds trigger={trigger} />
                 <Sun trigger={trigger} setTrigger={setTrigger} />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body right-[5%] text-2xl mt-40 ml-4 bg-white/30 absolute top-[10%] px-4 rounded-xl shadow-md w-1/4 ${!trigger ?' text-black' : ' text-white'}`}>
+                    Isang araw, habang siya ay namamahinga sa ibabaw ng isang bato, napag-isipan niyang mag-asawa na. Pasigaw niyang sinabi, “Ibibigay ko ang lahat ng aking pag-aari upang magkaroon ng asawa.”
+                    
+                </div>
                 <img src={Mount} alt="mount" className="absolute left-[-8rem] bottom-0 h-full" />
                 <img src={pearl} alt="" className="absolute bottom-[0rem] left-[45%] h-1/4" />
                 <div className="absolute bottom-[-0rem] left-[6rem]">
@@ -87,6 +144,12 @@ function index() {
                 <img src={Ground} alt="ground" className="absolute bottom-0 w-screen" />
                 <Clouds trigger={trigger} />
                 <Sun trigger={trigger} setTrigger={setTrigger} />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body right-[5%] text-2xl mt-40 ml-4 bg-white/30 absolute top-[10%] px-4 rounded-xl shadow-md w-1/4 ${!trigger ?' text-black' : ' text-white'}`}>
+                “Pakakasalan ko ang buwayang ito. Mayaman siya. Naku! Kung mapapasaakin lamang ang lahat ng kanyang perlas at diyamante, ako ang magiging pinakamasayang asawa sa buong mundo,” sabi ng paboreal sa kanyang sarili.
+                </div>
                 <img src={Mount} alt="mount" className="absolute left-[-8rem] bottom-0 h-full" />
                 <img src={pearl} alt="" className="absolute bottom-[0rem] left-[45%] h-1/4" />
                 <div className="absolute bottom-[-0rem] left-[6rem]">
@@ -100,6 +163,12 @@ function index() {
                 <img src={Ground} alt="ground" className="absolute bottom-0 w-screen" />
                 <Clouds trigger={trigger} />
                 <Sun trigger={trigger} setTrigger={setTrigger} />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body right-[5%] text-2xl mt-40 ml-4 bg-white/30 absolute top-[10%] px-4 rounded-xl shadow-md w-1/4 ${!trigger ?' text-black' : ' text-white'}`}>
+                Inanyayahan ng buwaya ang paboreal na umupo sa kanyang bibig upang hindi raw madumihan ng putik ang maganda nitong balahibo. Sinunod naman ng mangmang na ibon ang kahilingan ng buwaya.
+                </div>
                 <img src={Mount} alt="mount" className="absolute left-[-8rem] bottom-0 h-full" />
                 {/* <img src={pearl} alt="" className="absolute bottom-[0rem] left-[45%] h-1/4" /> */}
                 <div className="absolute bottom-[-2rem] scale-[0.7] left-[25rem]">
@@ -109,6 +178,11 @@ function index() {
                     <Pabo />
                 </div> */}
             </div>
+            {questions.map((d) => (
+                    <div key={d.question} className="relative h-screen w-screen">
+                        <Quiz quiz={d} />
+                    </div>
+                ))}
             
             
         </HTMLFlipBook>

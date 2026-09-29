@@ -15,6 +15,8 @@ import Eyes from './components/elements/eyes.tsx'
 import Pineapple from './components/images/7.png'
 import MotherCry from './components/elements/mother-cry.tsx'
 import Seek from './components/elements/seek.tsx'
+import Quiz from '@/components/composables/Quiz.tsx'
+
 export default function MyBook(props: any) {
     const navigate = useNavigate();
     const [dimensions, setDimensions] = useState({
@@ -42,6 +44,49 @@ export default function MyBook(props: any) {
     const handleFlip = (e: any) => {
         setCurrentPage(e.data);
     };
+
+    const questions = [
+        {
+        "question": "Sino ang anak ni Aling Rosa?",
+        "choices": [
+            "Pina",
+            "Maria",
+            "Lina",
+            "Rosa"
+        ],
+        "answerKey": 0
+    },
+    {
+        "question": "Ano ang hinahanap ni Pina?",
+        "choices": [
+            "Plato",
+            "Sandok",
+            "Kutsara",
+            "Baso"
+        ],
+        "answerKey": 1
+    },
+    {
+        "question": "Ano ang sinabi ni Aling Rosa kay Pina?",
+        "choices": [
+            "Magluto ka",
+            "Matulog ka",
+            "Tubuan ka ng maraming mata",
+            "Umalis ka"
+        ],
+        "answerKey": 2
+    },
+    {
+        "question": "Ano ang naging pangalan ng halaman?",
+        "choices": [
+            "Saging",
+            "Mangga",
+            "Pinya",
+            "Bayabas"
+        ],
+        "answerKey": 2
+    },
+    ]
 
     useEffect(() => {
         function handleResize() {
@@ -150,6 +195,11 @@ export default function MyBook(props: any) {
                         <MotherCry />
                     </div>
                 </div>
+                {questions.map((d) => (
+                    <div key={d.question} className="relative h-screen w-screen">
+                        <Quiz quiz={d} />
+                    </div>
+                ))}
             </HTMLFlipBook>
             {
             currentPage !== 0 && (

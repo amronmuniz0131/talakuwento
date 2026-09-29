@@ -10,6 +10,7 @@ import Mountains from './components/images/mountains.png';
 import ground from './components/images/ground.png'
 import FrogMom from './components/elements/frogMom.tsx'
 import FrogPop from './components/elements/frogPop.tsx'
+import Quiz from '@/components/composables/Quiz.tsx'
 
 function index() {
     const navigate = useNavigate();
@@ -50,6 +51,46 @@ function index() {
                 bookRef.current.pageFlip().flipPrev(); // 👈 Programmatic Prev
             }
         };
+        const questions = [{
+        "question": "Sino ang nakita ng mga palaka?",
+        "choices": [
+            "Kalabaw",
+            "Kabayo",
+            "Aso",
+            "Pusa"
+        ],
+        "answerKey": 0
+    },
+    {
+        "question": "Ano ang akala ng mga anak na palaka sa kalabaw?",
+        "choices": [
+            "Malaking palaka",
+            "Malaking aso",
+            "Maliit na palaka",
+            "Malaking kabayo"
+        ],
+        "answerKey": 0
+    },
+    {
+        "question": "Ano ang ginawa ni Inang Palaka?",
+        "choices": [
+            "Tumakbo",
+            "Huminga para lumaki",
+            "Tumalon",
+            "Nagtago"
+        ],
+        "answerKey": 1
+    },
+    {
+        "question": "Ano ang nangyari kay Inang Palaka?",
+        "choices": [
+            "Nakatakas",
+            "Nakatulog",
+            "Pumutok",
+            "Nagtago"
+        ],
+        "answerKey": 2
+    },]
   return (
     <div className="relative z-20">
         {/* @ts-ignore */}
@@ -125,6 +166,11 @@ function index() {
                     <Frog />
                 </div>
             </div>
+            {questions.map((d) => (
+                    <div key={d.question} className="relative h-screen w-screen">
+                        <Quiz quiz={d} />
+                    </div>
+                ))}
         </HTMLFlipBook>
         {
             currentPage !== 0 && (

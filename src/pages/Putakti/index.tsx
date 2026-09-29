@@ -11,8 +11,51 @@ import background from './components/images/13.png'
 import LadyAngry from './components/elements/lady-angry.tsx'
 import bar from './components/images/9.png'
 import LadyPanic from './components/elements/lady-panic.tsx'
+import Quiz from '@/components/composables/Quiz.tsx'
 
 function index() {
+    const questions  = [
+            {
+        "question": "Sino si Lalapindigowa-i?",
+        "choices": [
+            "Putakti",
+            "Hipon",
+            "Itlog",
+            "Palaka"
+        ],
+        "answerKey": 0
+    },
+    {
+        "question": "Sino ang dalawang asawa ni Lalapindigowa-i?",
+        "choices": [
+            "Odang at Orak",
+            "Maria at Rosa",
+            "Pina at Duri",
+            "Ana at Lina"
+        ],
+        "answerKey": 0
+    },
+    {
+        "question": "Saan dapat maghatid ng pagkain ang mga asawa?",
+        "choices": [
+            "Sa bahay",
+            "Sa bukid",
+            "Sa palengke",
+            "Sa gubat"
+        ],
+        "answerKey": 1
+    },
+    {
+        "question": "Bakit lumiit ang beywang ng putakti?",
+        "choices": [
+            "Nagutom siya",
+            "Nagkasakit siya",
+            "Natakot siya",
+            "Tumakbo siya"
+        ],
+        "answerKey": 0
+    }
+    ]
     const navigate = useNavigate();
     const [dimensions, setDimensions] = useState({
         width: typeof window !== 'undefined' ? window.innerWidth : 700,
@@ -115,7 +158,11 @@ function index() {
                     <Farmer />
                 </div>
             </div>
-            
+            {questions.map((d) => (
+                    <div key={d.question} className="relative h-screen w-screen">
+                        <Quiz quiz={d} />
+                    </div>
+                ))}
         </HTMLFlipBook>
         {
             currentPage !== 0 && (

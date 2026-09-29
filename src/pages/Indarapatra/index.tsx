@@ -8,6 +8,8 @@ import Dragon from './components/elements/dragon.tsx'
 import grass from './components/images/grass.png'
 import Wolf from './components/elements/wolf.tsx'
 import Kubo from './components/images/kubo.png'
+import Quiz from '@/components/composables/Quiz.tsx'
+
 import { useNavigate } from 'react-router-dom';
 import HTMLFlipBook from 'react-pageflip';
 function index() {
@@ -49,7 +51,48 @@ function index() {
                 bookRef.current.pageFlip().flipPrev(); // 👈 Programmatic Prev
             }
         };
-
+        const questions = [
+                {
+        "question": "Sino ang kapatid ni Indarapatra?",
+        "choices": [
+            "Sulayman",
+            "Kurita",
+            "Tarabusaw",
+            "Pah"
+        ],
+        "answerKey": 0
+    },
+    {
+        "question": "Sino ang unang halimaw na pinatay ni Sulayman?",
+        "choices": [
+            "Pah",
+            "Kurita",
+            "Tarabusaw",
+            "Juris Pakal"
+        ],
+        "answerKey": 1
+    },
+    {
+        "question": "Sino ang nakapatay kay Sulayman?",
+        "choices": [
+            "Kurita",
+            "Tarabusaw",
+            "Pah",
+            "Indarapatra"
+        ],
+        "answerKey": 2
+    },
+    {
+        "question": "Sino ang muling bumuhay kay Sulayman?",
+        "choices": [
+            "Hari",
+            "Dalaga",
+            "Indarapatra",
+            "Matandang babae"
+        ],
+        "answerKey": 2
+    },
+        ]
 
   return (
     <div className="relative z-20">
@@ -61,6 +104,12 @@ function index() {
         >
             <div className="relative h-screen w-screen">
                <Sun setTrigger={setTrigger} trigger={trigger} />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body right-[5%] text-2xl mt-40 ml-4 bg-white/30 absolute top-[10%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                    Si Indarapatra ay ang matapang na hari ng Mantapuli. Nabalitaan niya ang madalas na pananalakay ng mga dambuhalang ibon at mababangis na hayop sa ibang panig ng Mindanao. Labis niyang ikinalungkot ang mga nangyayaring ito sa mga naninirahan sa labas ng kaharian ng Mantapuli.
+                    </div>
                <img src={grass} className="absolute bottom-0 left-0 w-full" />
                <img src={Kubo} className="absolute bottom-[5%] right-0 w-1/2" />
                <div className="absolute left-[10%] bottom-[5%]">
@@ -72,6 +121,12 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                <Sun setTrigger={setTrigger} trigger={trigger} />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body right-[5%] text-2xl mt-40 ml-4 bg-white/30 absolute top-[10%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                    Ipinatawag ni Indarapatra ang kanyang kapatid na si Sulayman, isang matapang na kawal. Inutusan niya si Sulayman na puksain ang mga ibon at hayop na namiminsala sa mga tao. 
+                </div>
                <img src={grass} className="absolute bottom-0 left-0 w-full" />
                <img src={Kubo} className="absolute bottom-[5%] right-0 w-1/2" />
                <div className="absolute left-0 bottom-[-5%] scale-x-[-1]">
@@ -83,6 +138,12 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                <Sun setTrigger={setTrigger} trigger={trigger} />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body right-[5%] text-2xl mt-40 ml-4 bg-white/30 absolute top-[10%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                    nagtanim si Indarapatra ng isang halaman sa may durungawan. Aniya kay Sulayman, “Sa pamamagitan ng halamang ito ay malalaman ko ang nangyayari sa iyo. Kapag ito ay nalanta, nangangahulugan na ikaw ay namatay.”
+                </div>
                <img src={grass} className="absolute bottom-0 left-0 w-full" />
                <img src={Kubo} className="absolute bottom-[5%] right-0 w-1/2" />
                <div className="absolute left-[10%] bottom-[5%]">
@@ -94,6 +155,12 @@ function index() {
             </div>
             <div className="relative h-screen w-screen">
                <Sun setTrigger={setTrigger} trigger={trigger} />
+                <div 
+                // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
+                // setIsPlayed(!isPlayed); } }}  
+                className={`z-[999] font-body right-[5%] text-2xl mt-40 ml-4 bg-white/30 absolute top-[10%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                    Nagtungo naman si Sulayman sa Matutum. Hinanap niya ang halimaw na kumakain ng tao na kilala sa tawag na Tarabusaw. Hinagupit siya ni Tarabusaw gamit ang punongkahoy. Nang manghina si Tarabusaw, saka siya sinaksak ni Sulayman ng kanyang sibat.
+                    </div>
                <img src={grass} className="absolute bottom-0 left-0 w-full" />
                <img src={Kubo} className="absolute bottom-[5%] right-0 w-1/2" />
                <div className="absolute left-0 bottom-[-5%] scale-x-[-1]">
@@ -103,6 +170,11 @@ function index() {
                     <Spear />
                </div>
             </div>
+            {questions.map((d) => (
+                    <div key={d.question} className="relative h-screen w-screen">
+                        <Quiz quiz={d} />
+                    </div>
+                ))}
         </HTMLFlipBook>
         {
             currentPage !== 0 && (
