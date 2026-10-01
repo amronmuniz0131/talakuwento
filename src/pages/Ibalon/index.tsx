@@ -78,6 +78,13 @@ function index() {
     const handleFlip = (e: any) => {
             setCurrentPage(e.data);
         };
+
+    useEffect(() => {
+        if (currentPage === 11 - 1) {
+            const currentLevel = Number(localStorage.getItem("level") ?? 0);
+            localStorage.setItem("level", String(currentLevel + 1));
+        }
+    }, [currentPage]);
     
         useEffect(() => {
             function handleResize() {
