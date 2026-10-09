@@ -15,7 +15,7 @@ const audio = new Audio(selected ? doorOpen : door);
         key={playKey}
         onClick={(e) => { e.stopPropagation(); setSelected(!selected); audio.play().catch(e => console.error("Audio playback failed:", e));
          }}  
-        src={`${selected ? closeHouse : openHouse}?t=${playKey}`} alt="" className="" />
+        src={`${selected ? closeHouse : openHouse}?t=${playKey}`} alt="" className="h-[80vh]" />
     </div>
     
   )

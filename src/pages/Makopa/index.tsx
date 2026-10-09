@@ -154,11 +154,11 @@ function index() {
                 <div 
                 // onClick={(e) => { e.stopPropagation(); if (audioRef.current) { if (isPlayed) { audioRef.current.pause(); } else { audioRef.current.play().catch(err => console.error("Audio playback failed:", err)); } 
                 // setIsPlayed(!isPlayed); } }}  
-                className={`z-[999] font-body right-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
+                className={`z-[999] font-body left-[10%] text-2xl bg-white/30 absolute bottom-[50%] px-4 rounded-xl shadow-md w-1/4 ${trigger ?' text-black' : ' text-white'}`}>
                    Sa kabutihang palad, nabalitaan ng mga pari ang balak ng mga masasamang loob. Ibinaba nila ang kampana at ibinaon ito sa bakuran ng simbahan. Nangako silang ipagtatanggol nila ang kampana kahit pa ikamatay nila ito.
                     </div>
                 <div className="absolute bottom-0 right-0">
-                    <img src={bellMissing} alt="" />
+                    <img src={bellMissing} alt="" className="h-[100vh]" />
                 </div>
             </div>
             <div className="relative bg-blue-400 w-screen h-screen">
@@ -173,7 +173,7 @@ function index() {
                    Galit na galit ang mga masasamang loob nang dumating sila sa simbahan. Hinanap nila nang mabuti ang kampana ngunit hindi nila ito makita. Dahil sa matinding galit, pinatay nila ang lahat ng tao sa loob ng simbahan sapagkat walang nagturo sa pinagtaguan ng kampana.
                    </div>
                 <div className="absolute bottom-0 right-0">
-                    <img src={bellMissing} alt="" />
+                    <img src={bellMissing} alt="" className="h-[100vh]" />
                 </div>
                 <div className="absolute flex items-end bottom-0 left-[10%]">
                     <Couple />
@@ -193,7 +193,7 @@ function index() {
                    Isang araw, nagulat na lamang ang mga mamamayan nang makita nila ang isang punong tumubo at mabilis na lumaki sa bakuran ng simbahan. Nagbunga ito ng marami at ang mga bunga nito ay hugis kampana, makintab na pula sa labas, at maputi na parang bulak ang laman.
                    </div>
                 <div className="absolute bottom-0 right-0">
-                    <img src={bellMissing} alt="" />
+                    <img src={bellMissing} alt="" className="h-[100vh]" />
                 </div>
                 <div className="absolute bottom-0 left-0">
                     <Makopa />

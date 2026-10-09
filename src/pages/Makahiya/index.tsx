@@ -158,10 +158,10 @@ function index() {
                     <Ant />
                 </div>
                 <div className="absolute top-0 left-0 scale-[0.9]">
-                    <img src={Rain} alt="" />
+                    <img src={Rain} alt="" className="h-[80vh]" />
                 </div>
                 <div className="absolute top-0 right-0 scale-[0.9]">
-                    <img src={Rain} alt="" />
+                    <img src={Rain} alt="" className="h-[80vh]" />
                 </div>
             </div>
             <div className="bg-blue-400 relative h-screen w-screen">
@@ -177,10 +177,10 @@ function index() {
                     <AntFall />
                 </div>
                 <div className="absolute top-0 left-0 scale-[0.9]">
-                    <img src={Rain} alt="" />
+                    <img src={Rain} alt="" className="h-[80vh]" />
                 </div>
                 <div className="absolute top-0 right-0 scale-[0.9]">
-                    <img src={Rain} alt="" />
+                    <img src={Rain} alt="" className="h-[80vh]" />
                 </div>
             </div>
             <div className="bg-blue-400 relative h-screen w-screen">
@@ -196,10 +196,10 @@ function index() {
                     <Ant />
                 </div>
                 <div className="absolute top-[-10%] left-0 scale-[0.9]">
-                    <img src={Rain} alt="" />
+                    <img src={Rain} alt="" className="h-[80vh]" />
                 </div>
                 <div className="absolute top-[-10%] right-0 scale-[0.9]">
-                    <img src={Rain} alt="" />
+                    <img src={Rain} alt="" className="h-[80vh]" />
                 </div>
                 <div className="absolute bottom-[30%] left-[30%] -translate-x-1/2 scale-x-[-1]">
                     <Bug />
@@ -218,10 +218,10 @@ function index() {
                     <Ant />
                 </div>
                 <div className="absolute top-[-10%] left-0 scale-[0.9]">
-                    <img src={Rain} alt="" />
+                    <img src={Rain} alt="" className="h-[80vh]" />
                 </div>
                 <div className="absolute top-[-10%] right-0 scale-[0.9]">
-                    <img src={Rain} alt="" />
+                    <img src={Rain} alt="" className="h-[80vh]" />
                 </div>
                 <div className="absolute bottom-[10%] left-[45%] -translate-x-1/2 scale-x-[-1]">
                     <Bug />
@@ -240,10 +240,10 @@ function index() {
                     <Ant />
                 </div>
                 <div className="absolute top-[-10%] left-0 scale-[0.9]">
-                    <img src={Rain} alt="" />
+                    <img src={Rain} alt="" className="h-[80vh]" />
                 </div>
                 <div className="absolute top-[-10%] right-0 scale-[0.9]">
-                    <img src={Rain} alt="" />
+                    <img src={Rain} alt="" className="h-[80vh]" />
                 </div>
                 <div className="absolute bottom-[10%] left-[45%] -translate-x-1/2 scale-x-[-1]">
                     <Bug />

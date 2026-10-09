@@ -11,7 +11,7 @@ function Couple() {
         }
     }, [playing]);
   return (
-    <img onClick={()=> setPlaying(true)} src={playing ? antBuild : antIdle} alt="ant-build" className="h-full z-10" />
+    <img onClick={()=> setPlaying(true)} src={playing ? antBuild : antIdle} alt="ant-build" className="h-[60vh] z-10" />
   )
 }
 
