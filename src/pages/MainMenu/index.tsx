@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Lock } from 'lucide-react';
 
 import SunImg from '@/images/sun1.png';
-import RoadmapImg from './images/roadmap.jpg';
+import RoadmapImg from './images/bg.jpg';
 import MountainsImg from '@/pages/PalakaKalabaw/components/images/mountains.png';
 import GroundImg from '@/pages/PalakaKalabaw/components/images/ground.png';
 import TenorImg from '@/pages/Tenor/components/images/sheep.png';
@@ -33,9 +33,9 @@ interface StoryOption {
   locked?: boolean;
 }
 const storyOptions: StoryOption[] = [
-  { id: 'tenor', position: [20, 5], title: 'Pabula: Ibig Maging Tenor', subtitle: 'Kuwento ng Tupa at Kuliglig', route: '/tenor', image: TenorImg, label: 'Tenor' },
-  { id: 'putakti', position: [50, 10], title: 'Ang Putakti', subtitle: 'Kuwento ng Magsasaka', route: '/putakti', image: PutaktiImg, label: 'Putakti' },
-  { id: 'pinya', position: [35, 22], title: 'Alamat ng Pinya', subtitle: 'Ang Pinya at ang Ina', route: '/pinya', image: PinyaImg, label: 'Pinya' },
+  { id: 'tenor', position: [70, 15], title: 'Pabula: Ibig Maging Tenor', subtitle: 'Kuwento ng Tupa at Kuliglig', route: '/tenor', image: TenorImg, label: 'Tenor' },
+  { id: 'putakti', position: [52, 17], title: 'Ang Putakti', subtitle: 'Kuwento ng Magsasaka', route: '/putakti', image: PutaktiImg, label: 'Putakti' },
+  { id: 'pinya', position: [68, 25], title: 'Alamat ng Pinya', subtitle: 'Ang Pinya at ang Ina', route: '/pinya', image: PinyaImg, label: 'Pinya' },
   { id: 'palaka-kalabaw', position: [62, 34], title: 'Pabula: Ang Palaka at ang Kalabaw', subtitle: 'Kuwentong Palaka', route: '/palaka-kalabaw', image: PalakaImg, label: 'Palaka at Kalabaw' },
   { id: 'makahiya', position: [80, 20], title: 'Alamat ng Makahiya', subtitle: 'Ang Kwento ng Punong Ligaw', route: '/makahiya', image: MakahiyaImg, label: 'Makahiya' },
   { id: 'makopa', position: [85, 42], title: 'Alamat ng Makopa', subtitle: 'Ang Kampana ng Makopa', route: '/makopa', image: MakopaImg, label: 'Makopa' },
@@ -67,61 +67,60 @@ export default function MainMenu() {
 
   return (
     <div className="relative h-screen overflow-y-auto overflow-x-hidden bg-gradient-to-b from-sky-400 via-sky-200 to-emerald-100">
-        {/* Roadmap background - natural size, scrolls with content */}
-        <img src={RoadmapImg} alt="roadmap" className="absolute top-0 left-0 w-full h-auto" />
-        {/* Sun layer - moves slowest */}
-          {/* <img src={SunImg} alt="sun" className="absolute top-0 right-8 w-screen h-screen drop-shadow-xl" /> */}
+      {/* Roadmap background - natural size, scrolls with content */}
+      <img src={RoadmapImg} alt="roadmap" className="absolute top-0 left-0 w-full h-auto" />
+      {/* Sun layer - moves slowest */}
+      {/* <img src={SunImg} alt="sun" className="absolute top-0 right-8 w-screen h-screen drop-shadow-xl" /> */}
 
-        {/* Mountains layer - moves slower than content */}
-          {/* <img src={MountainsImg} alt="mountains" className="absolute bottom-[15%] w-full h-[60%] object-cover" /> */}
+      {/* Mountains layer - moves slower than content */}
+      {/* <img src={MountainsImg} alt="mountains" className="absolute bottom-[15%] w-full h-[60%] object-cover" /> */}
 
-        {/* Ground layer */}
-          {/* <img src={GroundImg} alt="ground" className="absolute bottom-0 w-full h-[35%] object-cover" /> */}
-          <div className="relative flex flex-col items-center px-8 pt-10 h-[300vh]">
-            <h1 className="text-5xl font-extrabold text-white drop-shadow-[0_4px_0_rgba(0,0,0,0.25)]">
-              Talakuwento
-            </h1>
-            <p className="mt-2 text-xl font-semibold text-white/90 drop-shadow-md">
-              Pumili ng kuwento na nais mong basahin
-            </p>
+      {/* Ground layer */}
+      {/* <img src={GroundImg} alt="ground" className="absolute bottom-0 w-full h-[35%] object-cover" /> */}
+      <div className="relative flex flex-col items-center px-8 pt-10 h-[300vh]">
+        <h1 className="text-5xl font-extrabold text-white drop-shadow-[0_4px_0_rgba(0,0,0,0.25)]">
+          Talakuwento
+        </h1>
+        <p className="mt-2 text-xl font-semibold text-white/90 drop-shadow-md">
+          Pumili ng kuwento na nais mong basahin
+        </p>
 
-            {/* <div className="grid grid-cols-1 gap-12 mt-10"> */}
-            {/* Dots leading to the next story */}
-            {pathDots.map((dot, i) => (
-              <div
-                key={i}
-                style={{ left: `${dot.left}%`, top: `${dot.top}%` }}
-                className="absolute w-4 h-4 rounded-full bg-white/80 border-2 border-amber-500 shadow-md"
+        {/* <div className="grid grid-cols-1 gap-12 mt-10"> */}
+        {/* Dots leading to the next story */}
+        {pathDots.map((dot, i) => (
+          <div
+            key={i}
+            style={{ left: `${dot.left}%`, top: `${dot.top}%` }}
+            className="absolute w-4 h-4 rounded-full bg-white/80 border-2 border-amber-500 shadow-md"
+          />
+        ))}
+
+        {storyOptions.map((story, index) => (
+          <button
+            key={story.id}
+            onClick={() => index <= level && setSelected(story)}
+            disabled={index > level}
+            style={{ left: `${story.position[0]}%`, top: `${story.position[1]}%` }}
+            className={`absolute group flex flex-col items-center gap-3 rounded-3xl p-5 w-52 transition-all duration-300 ${index > level
+              ? 'opacity-80 grayscale cursor-not-allowed'
+              : 'hover:shadow-2xl hover:-translate-y-2 hover:scale-105'
+              }`}
+          >
+            <div className="h-28 flex items-center justify-center">
+              <img
+                src={story.image}
+                alt={story.label}
+                className={`max-h-28 object-contain drop-shadow-md ${index > level ? '' : 'group-hover:scale-110 transition-transform duration-300'}`}
               />
-            ))}
-
-              {storyOptions.map((story, index) => (
-                <button
-                  key={story.id}
-                  onClick={() => index <= level && setSelected(story)}
-                  disabled={index > level}
-                  style={{ left: `${story.position[0]}%`, top: `${story.position[1]}%` }}
-                  className={`absolute group flex flex-col items-center gap-3 rounded-3xl p-5 w-52 transition-all duration-300 ${
-                    index > level
-                      ? 'opacity-50 grayscale cursor-not-allowed'
-                      : 'hover:shadow-2xl hover:-translate-y-2 hover:scale-105'
-                  }`}
-                >
-                  <div className="h-28 flex items-center justify-center">
-                    <img
-                      src={story.image}
-                      alt={story.label}
-                      className={`max-h-28 object-contain drop-shadow-md ${index > level ? '' : 'group-hover:scale-110 transition-transform duration-300'}`}
-                    />
-                  </div>
-                  <span className="flex items-center gap-2 text-lg font-bold text-gray-800">
-                    {index > level && <Lock className="w-5 h-5 text-gray-500" />}
-                    {story.label}
-                  </span>
-                </button>
-              ))}
-            {/* </div> */}
-          </div>
+            </div>
+            <span className="flex items-center gap-2 text-lg font-bold text-gray-800">
+              {index > level && <Lock className="w-5 h-5 text-gray-500" />}
+              {story.label}
+            </span>
+          </button>
+        ))}
+        {/* </div> */}
+      </div>
       {/* Story popup */}
       <AnimatePresence>
         {selected && (
